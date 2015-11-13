@@ -17,6 +17,7 @@
 		CAA7D5231BF691FB00A8DF8E /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA7D5221BF691FB00A8DF8E /* LandingViewController.swift */; };
 		CAA7D5271BF6927E00A8DF8E /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAA7D5261BF6927E00A8DF8E /* SWRevealViewController.m */; };
 		CAA7D52A1BF692BF00A8DF8E /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA7D5291BF692BF00A8DF8E /* MenuViewController.swift */; };
+		CAA7D52C1BF6988500A8DF8E /* RewardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA7D52B1BF6988500A8DF8E /* RewardsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		CAA7D5261BF6927E00A8DF8E /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = "../../../Downloads/SWRevealViewController-master 2/SWRevealViewController/SWRevealViewController.m"; sourceTree = "<group>"; };
 		CAA7D5281BF6928800A8DF8E /* SWRevealViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = "../../../Downloads/SWRevealViewController-master 2/SWRevealViewController/SWRevealViewController.h"; sourceTree = "<group>"; };
 		CAA7D5291BF692BF00A8DF8E /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		CAA7D52B1BF6988500A8DF8E /* RewardsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RewardsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 				CAA7D5001BF6904900A8DF8E /* Info.plist */,
 				CAA7D5221BF691FB00A8DF8E /* LandingViewController.swift */,
 				CAA7D5291BF692BF00A8DF8E /* MenuViewController.swift */,
+				CAA7D52B1BF6988500A8DF8E /* RewardsViewController.swift */,
 			);
 			path = CleanPlate;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 				CAA7D4F71BF6904800A8DF8E /* ViewController.swift in Sources */,
 				CAA7D52A1BF692BF00A8DF8E /* MenuViewController.swift in Sources */,
 				CAA7D5231BF691FB00A8DF8E /* LandingViewController.swift in Sources */,
+				CAA7D52C1BF6988500A8DF8E /* RewardsViewController.swift in Sources */,
 				CAA7D4F51BF6904800A8DF8E /* AppDelegate.swift in Sources */,
 				CAA7D5271BF6927E00A8DF8E /* SWRevealViewController.m in Sources */,
 			);

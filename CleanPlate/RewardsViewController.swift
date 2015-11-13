@@ -1,5 +1,5 @@
 //
-//  LandingViewController.swift
+//  RewardsViewController.swift
 //  CleanPlate
 //
 //  Created by Bryan McLellan on 11/13/15.
@@ -8,20 +8,20 @@
 
 import UIKit
 
-class LandingViewController: UIViewController {
+class RewardsViewController: UIViewController {
 
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
+        
         if self.revealViewController() != nil {
             menuButton.target = self.revealViewController()
             menuButton.action = "revealToggle:"
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
             self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
         }
-
+        
         // Do any additional setup after loading the view.
     }
 
