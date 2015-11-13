@@ -14,6 +14,9 @@
 		CAA7D4FF1BF6904900A8DF8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAA7D4FD1BF6904900A8DF8E /* LaunchScreen.storyboard */; };
 		CAA7D50A1BF6904900A8DF8E /* CleanPlateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA7D5091BF6904900A8DF8E /* CleanPlateTests.swift */; };
 		CAA7D5151BF6904900A8DF8E /* CleanPlateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA7D5141BF6904900A8DF8E /* CleanPlateUITests.swift */; };
+		CAA7D5231BF691FB00A8DF8E /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA7D5221BF691FB00A8DF8E /* LandingViewController.swift */; };
+		CAA7D5271BF6927E00A8DF8E /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAA7D5261BF6927E00A8DF8E /* SWRevealViewController.m */; };
+		CAA7D52A1BF692BF00A8DF8E /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA7D5291BF692BF00A8DF8E /* MenuViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,11 @@
 		CAA7D5101BF6904900A8DF8E /* CleanPlateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CleanPlateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAA7D5141BF6904900A8DF8E /* CleanPlateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanPlateUITests.swift; sourceTree = "<group>"; };
 		CAA7D5161BF6904900A8DF8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CAA7D5221BF691FB00A8DF8E /* LandingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
+		CAA7D5251BF6927E00A8DF8E /* CleanPlate-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CleanPlate-Bridging-Header.h"; sourceTree = "<group>"; };
+		CAA7D5261BF6927E00A8DF8E /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = "../../../Downloads/SWRevealViewController-master 2/SWRevealViewController/SWRevealViewController.m"; sourceTree = "<group>"; };
+		CAA7D5281BF6928800A8DF8E /* SWRevealViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = "../../../Downloads/SWRevealViewController-master 2/SWRevealViewController/SWRevealViewController.h"; sourceTree = "<group>"; };
+		CAA7D5291BF692BF00A8DF8E /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +105,15 @@
 		CAA7D4F31BF6904800A8DF8E /* CleanPlate */ = {
 			isa = PBXGroup;
 			children = (
+				CAA7D5241BF6925400A8DF8E /* SWReveal */,
 				CAA7D4F41BF6904800A8DF8E /* AppDelegate.swift */,
 				CAA7D4F61BF6904800A8DF8E /* ViewController.swift */,
 				CAA7D4F81BF6904900A8DF8E /* Main.storyboard */,
 				CAA7D4FB1BF6904900A8DF8E /* Assets.xcassets */,
 				CAA7D4FD1BF6904900A8DF8E /* LaunchScreen.storyboard */,
 				CAA7D5001BF6904900A8DF8E /* Info.plist */,
+				CAA7D5221BF691FB00A8DF8E /* LandingViewController.swift */,
+				CAA7D5291BF692BF00A8DF8E /* MenuViewController.swift */,
 			);
 			path = CleanPlate;
 			sourceTree = "<group>";
@@ -123,6 +134,16 @@
 				CAA7D5161BF6904900A8DF8E /* Info.plist */,
 			);
 			path = CleanPlateUITests;
+			sourceTree = "<group>";
+		};
+		CAA7D5241BF6925400A8DF8E /* SWReveal */ = {
+			isa = PBXGroup;
+			children = (
+				CAA7D5281BF6928800A8DF8E /* SWRevealViewController.h */,
+				CAA7D5261BF6927E00A8DF8E /* SWRevealViewController.m */,
+				CAA7D5251BF6927E00A8DF8E /* CleanPlate-Bridging-Header.h */,
+			);
+			name = SWReveal;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +278,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CAA7D4F71BF6904800A8DF8E /* ViewController.swift in Sources */,
+				CAA7D52A1BF692BF00A8DF8E /* MenuViewController.swift in Sources */,
+				CAA7D5231BF691FB00A8DF8E /* LandingViewController.swift in Sources */,
 				CAA7D4F51BF6904800A8DF8E /* AppDelegate.swift in Sources */,
+				CAA7D5271BF6927E00A8DF8E /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,10 +421,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = CleanPlate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bryan.CleanPlate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CleanPlate/CleanPlate-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -408,10 +435,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = CleanPlate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bryan.CleanPlate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CleanPlate/CleanPlate-Bridging-Header.h";
 			};
 			name = Release;
 		};
