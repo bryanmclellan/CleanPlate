@@ -12,6 +12,8 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     @IBOutlet weak var tableView: UITableView!
     
+    var CellLabels = ["Home", "Recent", "Rewards", "Plates Served", "Settings", "Logout"]
+    var CellImages = ["ic_home_3x", "ic_update_3x", "ic_card_giftcard_3x", "ic_local_dining_3x"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,24 +29,28 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = UITableViewCell()
-        cell.textLabel?.text = "\(indexPath.row)"
+        let cell = tableView.dequeueReusableCellWithIdentifier("menuCell", forIndexPath: indexPath) as! MenuTableViewCell
+
+        cell.menuCellTitle.text = CellLabels[indexPath.row]
+        let closeImage = UIImage(named:CellImages[indexPath.row])?.imageWithRenderingMode(
+            UIImageRenderingMode.AlwaysTemplate)
+        cell.menuCellImage.image = closeImage!
         
         return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if(indexPath.row == 3){
-            self.performSegueWithIdentifier("segue3", sender: self)
+        if(indexPath.row == 2){
+            self.performSegueWithIdentifier(CellLabels[2] + "Segue", sender: self)
         }
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return CellImages.count
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 40
+        return 60
     }
     
 

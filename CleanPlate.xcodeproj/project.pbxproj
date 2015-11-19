@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA4BBE8D1BFDBE8D00A02253 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4BBE8C1BFDBE8D00A02253 /* MenuTableViewCell.swift */; };
+		CA4BBE8F1BFDC47400A02253 /* RewardsActiveTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4BBE8E1BFDC47400A02253 /* RewardsActiveTableViewCell.swift */; };
+		CA88B4101BF6AA5E000AF449 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA88B40F1BF6AA5E000AF449 /* CoreLocation.framework */; };
 		CAA7D4F51BF6904800A8DF8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA7D4F41BF6904800A8DF8E /* AppDelegate.swift */; };
 		CAA7D4F71BF6904800A8DF8E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA7D4F61BF6904800A8DF8E /* ViewController.swift */; };
 		CAA7D4FA1BF6904900A8DF8E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAA7D4F81BF6904900A8DF8E /* Main.storyboard */; };
@@ -41,6 +44,9 @@
 /* Begin PBXFileReference section */
 		9B5DD2A48E742BAAD3637612 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		9D33AE90B842060BEB57C3F5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA4BBE8C1BFDBE8D00A02253 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
+		CA4BBE8E1BFDC47400A02253 /* RewardsActiveTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RewardsActiveTableViewCell.swift; sourceTree = "<group>"; };
+		CA88B40F1BF6AA5E000AF449 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		CAA7D4F11BF6904800A8DF8E /* CleanPlate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CleanPlate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAA7D4F41BF6904800A8DF8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CAA7D4F61BF6904800A8DF8E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -68,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA88B4101BF6AA5E000AF449 /* CoreLocation.framework in Frameworks */,
 				D661D92DA9B2B4AC4E6A89CA /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -101,9 +108,19 @@
 		6F34ABA3C2D53A0CE439D5E8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CA88B40F1BF6AA5E000AF449 /* CoreLocation.framework */,
 				9D33AE90B842060BEB57C3F5 /* libPods.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CA4BBE8B1BFDBE7800A02253 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				CA4BBE8C1BFDBE8D00A02253 /* MenuTableViewCell.swift */,
+				CA4BBE8E1BFDC47400A02253 /* RewardsActiveTableViewCell.swift */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		CAA7D4E81BF6904800A8DF8E = {
@@ -131,6 +148,7 @@
 		CAA7D4F31BF6904800A8DF8E /* CleanPlate */ = {
 			isa = PBXGroup;
 			children = (
+				CA4BBE8B1BFDBE7800A02253 /* Cells */,
 				CAA7D5241BF6925400A8DF8E /* SWReveal */,
 				CAA7D4F41BF6904800A8DF8E /* AppDelegate.swift */,
 				CAA7D4F61BF6904800A8DF8E /* ViewController.swift */,
@@ -357,7 +375,9 @@
 			files = (
 				CAA7D4F71BF6904800A8DF8E /* ViewController.swift in Sources */,
 				CAA7D52A1BF692BF00A8DF8E /* MenuViewController.swift in Sources */,
+				CA4BBE8D1BFDBE8D00A02253 /* MenuTableViewCell.swift in Sources */,
 				CAA7D5231BF691FB00A8DF8E /* LandingViewController.swift in Sources */,
+				CA4BBE8F1BFDC47400A02253 /* RewardsActiveTableViewCell.swift in Sources */,
 				CAA7D52C1BF6988500A8DF8E /* RewardsViewController.swift in Sources */,
 				CAA7D4F51BF6904800A8DF8E /* AppDelegate.swift in Sources */,
 				CAA7D5271BF6927E00A8DF8E /* SWRevealViewController.m in Sources */,

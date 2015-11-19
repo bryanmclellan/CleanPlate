@@ -9,9 +9,11 @@
 import UIKit
 import GoogleMaps
 
-class LandingViewController: UIViewController {
+class LandingViewController: UIViewController, CLLocationManagerDelegate {
 
     @IBOutlet weak var menuButton: UIBarButtonItem!
+    
+    let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +24,11 @@ class LandingViewController: UIViewController {
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
             self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
         }
+        
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
         
         
         
@@ -36,12 +43,24 @@ class LandingViewController: UIViewController {
         marker.title = "Sydney"
         marker.snippet = "Australia"
         marker.map = mapView
-        
-        
-        
-        
 
+        
+        if let mylocation = mapView.myLocation {
+            print("User's location: \(mylocation)")
+        } else {
+            print("User's location is unknown")
+        }
+        
+        
         // Do any additional setup after loading the view.
+    }
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        print("got dat location doe")
+    }
+
+    func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
+        print("Error while updating location " + error.localizedDescription)
     }
 
     override func didReceiveMemoryWarning() {
