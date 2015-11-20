@@ -61,6 +61,42 @@ class RewardsViewController: UIViewController, UITableViewDataSource, UITableVie
         return cell
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let alert = UIAlertController(title: "Redeem Reward?", message: "Click OK to claim your \(rewardDescriptions[indexPath.row]) from \(restaurantNames[indexPath.row])", preferredStyle: .Alert)
+        
+        let QRalert = UIAlertController(title: "\(rewardDescriptions[indexPath.row])", message: "Reward Code: me856tyr90", preferredStyle: .Alert)
+        
+        let DoneAction = UIAlertAction(title: "Done", style: .Default) { (UIAlertAction) -> Void in
+            print("clicked done")
+        }
+        
+        let OKaction = UIAlertAction(title: "OK", style: .Default) { (UIAlertAction) -> Void in
+            print("clicked ok")
+            let image = UIImage(named: "QRImage")
+            let QRimageView = UIImageView(frame: CGRectMake(0, 0, 200, 200))
+            QRimageView.image = image
+            
+            QRalert.view.addSubview(QRimageView)
+            QRalert.addAction(DoneAction)
+            self.presentViewController(QRalert, animated: true, completion: { () -> Void in
+                // ?
+            })
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Default) { (UIAlertAction) -> Void in
+            print("cancel clicked")
+        }
+        
+        
+        alert.addAction(cancelAction)
+        alert.addAction(OKaction)
+        
+        presentViewController(alert, animated: true) { () -> Void in
+            // add code to move arrays around here
+        }
+        
+    }
+    
 
     /*
     // MARK: - Navigation
