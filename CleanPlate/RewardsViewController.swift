@@ -10,13 +10,22 @@ import UIKit
 
 class RewardsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    
+    @IBOutlet weak var ActiveOrRedeemSegControl: UISegmentedControl!
+    
+    @IBOutlet weak var redeemedTableView: UITableView!
+    
     @IBOutlet weak var QRView: UIView!
     
     @IBOutlet weak var QRLabel: UILabel!
     @IBOutlet weak var activeTableView: UITableView!
     var restaurantNames = ["Scoop", "Cheesecake Factory", "Zola", "In-n-Out", "Tacolicious"]
     var rewardDescriptions = ["Free Single Scoop Cone", "Free Dessert with Meal", "50% off wine pairing", "Free fries", "Free taco"]
-    var rewardImages = ["scoop","cheesecake-factory-logo","zola-logo","in-n-out-logo","tacoliciousicon"]
+    var rewardImages = ["scoop","cheesecake-factory-logo","zola-logo","in-n-out-logo", "tacoliciousicon"]
+    
+    var redeemedNames = [String]()
+    var redeemedDescriptions = [String]()
+    var redeemedImages = [String]()
     
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
@@ -32,10 +41,13 @@ class RewardsViewController: UIViewController, UITableViewDataSource, UITableVie
         
         activeTableView.delegate = self
         activeTableView.dataSource = self
+        redeemedTableView.delegate = self
+        redeemedTableView.dataSource = self
         
         self.automaticallyAdjustsScrollViewInsets = false
-        
-        
+        alphaOutSubviews(activeTableView, value: 1)
+        self.view.bringSubviewToFront(activeTableView)
+        alphaOutSubviews(redeemedTableView,value: 0)
         // Do any additional setup after loading the view.
     }
 
@@ -45,29 +57,75 @@ class RewardsViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return restaurantNames.count
+        if tableView == activeTableView{
+            return restaurantNames.count
+        }
+        else {
+            return redeemedNames.count
+        }
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 80
     }
     
+    @IBAction func segControlSwitch(sender: UISegmentedControl) {
+        if sender.selectedSegmentIndex == 1{
+            alphaOutSubviews(redeemedTableView, value: 1)
+            self.view.bringSubviewToFront(redeemedTableView)
+            alphaOutSubviews(activeTableView,value: 0)
+        }
+        else {
+            alphaOutSubviews(activeTableView, value: 1)
+            self.view.bringSubviewToFront(activeTableView)
+            alphaOutSubviews(redeemedTableView, value: 0)
+        }
+    }
+    
+    func alphaOutSubviews(view: UIView, value: CGFloat){
+        for var s in view.subviews{
+            s.alpha = value
+        }
+    }
+    
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = activeTableView.dequeueReusableCellWithIdentifier("activeCell", forIndexPath: indexPath) as! RewardsActiveTableViewCell
-        cell.rewardLabel.text = rewardDescriptions[indexPath.row]
-        cell.restaurantNameLabel.text = restaurantNames[indexPath.row]
-        
-        let image = UIImage(named: rewardImages[indexPath.row])
-        
-        cell.rewardsActiveCellImageView.layer.borderWidth = 1
-        cell.rewardsActiveCellImageView.layer.masksToBounds = false
-        cell.rewardsActiveCellImageView.layer.borderColor = UIColor.blackColor().CGColor
-        cell.rewardsActiveCellImageView.layer.cornerRadius = 10
-        cell.rewardsActiveCellImageView.clipsToBounds = true
-        cell.rewardsActiveCellImageView.image = image
-        
-        cell.timeLabel.text = "Expires: Dec 12"
-        cell.timeLabel.textColor = UIColor(red: 255/255.0, green: 102/255.0, blue: 102/255.0, alpha: 1.0)
+        var cell = RewardsActiveTableViewCell()
+        if tableView == activeTableView{
+            cell = activeTableView.dequeueReusableCellWithIdentifier("activeCell", forIndexPath: indexPath) as! RewardsActiveTableViewCell
+            cell.rewardLabel.text = rewardDescriptions[indexPath.row]
+            cell.restaurantNameLabel.text = restaurantNames[indexPath.row]
+            
+            let image = UIImage(named: rewardImages[indexPath.row])
+            
+            cell.rewardsActiveCellImageView.layer.borderWidth = 1
+            cell.rewardsActiveCellImageView.layer.masksToBounds = false
+            cell.rewardsActiveCellImageView.layer.borderColor = UIColor.blackColor().CGColor
+            cell.rewardsActiveCellImageView.layer.cornerRadius = 10
+            cell.rewardsActiveCellImageView.clipsToBounds = true
+            cell.rewardsActiveCellImageView.image = image
+            
+            cell.timeLabel.text = "Expires: Dec 12"
+            cell.timeLabel.textColor = UIColor(red: 255/255.0, green: 102/255.0, blue: 102/255.0, alpha: 1.0)
+        }
+        else {
+            cell = activeTableView.dequeueReusableCellWithIdentifier("activeCell", forIndexPath: indexPath) as! RewardsActiveTableViewCell
+            cell.rewardLabel.text = redeemedDescriptions[indexPath.row]
+            cell.restaurantNameLabel.text = redeemedNames[indexPath.row]
+            
+            let image = UIImage(named: redeemedImages[indexPath.row])
+            
+            cell.rewardsActiveCellImageView.layer.borderWidth = 1
+            cell.rewardsActiveCellImageView.layer.masksToBounds = false
+            cell.rewardsActiveCellImageView.layer.borderColor = UIColor.blackColor().CGColor
+            cell.rewardsActiveCellImageView.layer.cornerRadius = 10
+            cell.rewardsActiveCellImageView.clipsToBounds = true
+            cell.rewardsActiveCellImageView.image = image
+           
+            cell.timeLabel.hidden = true
+//            cell.timeLabel.text = "Expires: Dec 12"
+//            cell.timeLabel.textColor = UIColor(red: 255/255.0, green: 102/255.0, blue: 102/255.0, alpha: 1.0)
+        }
         
         return cell
     }
@@ -84,6 +142,10 @@ class RewardsViewController: UIViewController, UITableViewDataSource, UITableVie
     
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if tableView == redeemedTableView {
+            tableView.deselectRowAtIndexPath(indexPath, animated: true)
+            return
+        }
         let alert = UIAlertController(title: "Redeem Reward?", message: "Click OK to claim your \(rewardDescriptions[indexPath.row]) from \(restaurantNames[indexPath.row])", preferredStyle: .Alert)
         
         let OKaction = UIAlertAction(title: "OK", style: .Default) { (UIAlertAction) -> Void in
@@ -99,9 +161,10 @@ class RewardsViewController: UIViewController, UITableViewDataSource, UITableVie
                 }
                 
                 self.view.bringSubviewToFront(self.QRView)
-                
             })
-            
+            self.removeActiveAddToRedeemed(indexPath.row)
+            self.activeTableView.reloadData()
+            self.redeemedTableView.reloadData()
         }
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .Default) { (UIAlertAction) -> Void in
@@ -114,8 +177,15 @@ class RewardsViewController: UIViewController, UITableViewDataSource, UITableVie
         
         presentViewController(alert, animated: true) { () -> Void in
             // add code to move arrays around here
+            tableView.deselectRowAtIndexPath(indexPath, animated: true)
         }
-        
+    }
+    
+    func removeActiveAddToRedeemed(index: Int) {
+        redeemedNames.append(restaurantNames.removeAtIndex(index))
+        redeemedDescriptions.append(rewardDescriptions.removeAtIndex(index))
+        redeemedImages.append( rewardImages.removeAtIndex(index))
+
     }
     
 
