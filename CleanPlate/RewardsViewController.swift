@@ -58,7 +58,16 @@ class RewardsViewController: UIViewController, UITableViewDataSource, UITableVie
         cell.restaurantNameLabel.text = restaurantNames[indexPath.row]
         
         let image = UIImage(named: rewardImages[indexPath.row])
+        
+        cell.rewardsActiveCellImageView.layer.borderWidth = 1
+        cell.rewardsActiveCellImageView.layer.masksToBounds = false
+        cell.rewardsActiveCellImageView.layer.borderColor = UIColor.blackColor().CGColor
+        cell.rewardsActiveCellImageView.layer.cornerRadius = 10
+        cell.rewardsActiveCellImageView.clipsToBounds = true
         cell.rewardsActiveCellImageView.image = image
+        
+        cell.timeLabel.text = "Expires: Dec 12"
+        cell.timeLabel.textColor = UIColor(red: 255/255.0, green: 102/255.0, blue: 102/255.0, alpha: 1.0)
         
         return cell
     }
