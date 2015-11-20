@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>CustomIOSAlertView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -12,7 +17,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1469924FC52F60B0068FA24EEFCB3EFC</key>
+		<key>399956528FB356F682CF4C02A953CAA9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6A3E7C3A4E39D33477AFD6798025CE5C</key>
 		<dict>
 			<key>primary</key>
 			<true/>

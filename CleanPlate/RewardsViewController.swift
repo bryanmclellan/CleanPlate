@@ -10,7 +10,9 @@ import UIKit
 
 class RewardsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    @IBOutlet weak var QRView: UIView!
     
+    @IBOutlet weak var QRLabel: UILabel!
     @IBOutlet weak var activeTableView: UITableView!
     var restaurantNames = ["Scoop", "Cheesecake Factory", "Zola", "In-n-Out", "Tacolicious"]
     var rewardDescriptions = ["Free Single Scoop Cone", "Free Dessert with Meal", "50% off wine pairing", "Free fries", "Free taco"]
@@ -61,26 +63,36 @@ class RewardsViewController: UIViewController, UITableViewDataSource, UITableVie
         return cell
     }
     
+    @IBAction func DonePressed(sender: AnyObject) {
+        UIView.animateWithDuration(0.3, animations: { () -> Void in
+            let subviews = self.view.subviews
+            for var s in subviews {
+                s.alpha = 1
+            }
+            self.view.sendSubviewToBack(self.QRView)
+        })
+    }
+    
+    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let alert = UIAlertController(title: "Redeem Reward?", message: "Click OK to claim your \(rewardDescriptions[indexPath.row]) from \(restaurantNames[indexPath.row])", preferredStyle: .Alert)
         
-        let QRalert = UIAlertController(title: "\(rewardDescriptions[indexPath.row])", message: "Reward Code: me856tyr90", preferredStyle: .Alert)
-        
-        let DoneAction = UIAlertAction(title: "Done", style: .Default) { (UIAlertAction) -> Void in
-            print("clicked done")
-        }
-        
         let OKaction = UIAlertAction(title: "OK", style: .Default) { (UIAlertAction) -> Void in
             print("clicked ok")
-            let image = UIImage(named: "QRImage")
-            let QRimageView = UIImageView(frame: CGRectMake(0, 0, 200, 200))
-            QRimageView.image = image
             
-            QRalert.view.addSubview(QRimageView)
-            QRalert.addAction(DoneAction)
-            self.presentViewController(QRalert, animated: true, completion: { () -> Void in
-                // ?
+            self.QRLabel.text = self.rewardDescriptions[indexPath.row]
+            UIView.animateWithDuration(0.3, animations: { () -> Void in
+                let subviews = self.view.subviews
+                for var s in subviews {
+                    if (s != self.QRView){
+                     s.alpha = 0.80
+                    }
+                }
+                
+                self.view.bringSubviewToFront(self.QRView)
+                
             })
+            
         }
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .Default) { (UIAlertAction) -> Void in
