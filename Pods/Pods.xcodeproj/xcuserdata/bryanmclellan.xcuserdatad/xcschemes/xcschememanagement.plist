@@ -4,7 +4,17 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Bolts.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>CustomIOSAlertView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Parse.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -17,12 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>399956528FB356F682CF4C02A953CAA9</key>
+		<key>5DA2A3B82D14C7B270F705DEFEA1E5BA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>6A3E7C3A4E39D33477AFD6798025CE5C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A48601FEE4437A924848DB48369BA809</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B53DF583949C0313F8655A28EF6EB07D</key>
 		<dict>
 			<key>primary</key>
 			<true/>

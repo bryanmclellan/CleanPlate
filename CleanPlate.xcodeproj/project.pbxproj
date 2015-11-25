@@ -21,6 +21,14 @@
 		CAA7D5271BF6927E00A8DF8E /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAA7D5261BF6927E00A8DF8E /* SWRevealViewController.m */; };
 		CAA7D52A1BF692BF00A8DF8E /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA7D5291BF692BF00A8DF8E /* MenuViewController.swift */; };
 		CAA7D52C1BF6988500A8DF8E /* RewardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA7D52B1BF6988500A8DF8E /* RewardsViewController.swift */; };
+		CAD67C591C0571D300A71DD7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAD67C551C0571D300A71DD7 /* AudioToolbox.framework */; };
+		CAD67C5A1C0571D300A71DD7 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAD67C561C0571D300A71DD7 /* CFNetwork.framework */; };
+		CAD67C5B1C0571D300A71DD7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAD67C571C0571D300A71DD7 /* CoreGraphics.framework */; };
+		CAD67C5C1C0571D300A71DD7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAD67C581C0571D300A71DD7 /* QuartzCore.framework */; };
+		CAD67C5E1C0571DE00A71DD7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAD67C5D1C0571DE00A71DD7 /* Security.framework */; };
+		CAD67C601C0571E700A71DD7 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAD67C5F1C0571E700A71DD7 /* StoreKit.framework */; };
+		CAD67C621C0571F300A71DD7 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CAD67C611C0571F300A71DD7 /* libz.tbd */; };
+		CAD67C641C0571FF00A71DD7 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CAD67C631C0571FF00A71DD7 /* libsqlite3.tbd */; };
 		D661D92DA9B2B4AC4E6A89CA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D33AE90B842060BEB57C3F5 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +74,14 @@
 		CAA7D5281BF6928800A8DF8E /* SWRevealViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = "../../../Downloads/SWRevealViewController-master 2/SWRevealViewController/SWRevealViewController.h"; sourceTree = "<group>"; };
 		CAA7D5291BF692BF00A8DF8E /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		CAA7D52B1BF6988500A8DF8E /* RewardsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RewardsViewController.swift; sourceTree = "<group>"; };
+		CAD67C551C0571D300A71DD7 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		CAD67C561C0571D300A71DD7 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		CAD67C571C0571D300A71DD7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		CAD67C581C0571D300A71DD7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		CAD67C5D1C0571DE00A71DD7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		CAD67C5F1C0571E700A71DD7 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		CAD67C611C0571F300A71DD7 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		CAD67C631C0571FF00A71DD7 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		DE6689CD633331C266BE4AA7 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -74,6 +90,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAD67C641C0571FF00A71DD7 /* libsqlite3.tbd in Frameworks */,
+				CAD67C621C0571F300A71DD7 /* libz.tbd in Frameworks */,
+				CAD67C601C0571E700A71DD7 /* StoreKit.framework in Frameworks */,
+				CAD67C5E1C0571DE00A71DD7 /* Security.framework in Frameworks */,
+				CAD67C591C0571D300A71DD7 /* AudioToolbox.framework in Frameworks */,
+				CAD67C5A1C0571D300A71DD7 /* CFNetwork.framework in Frameworks */,
+				CAD67C5B1C0571D300A71DD7 /* CoreGraphics.framework in Frameworks */,
+				CAD67C5C1C0571D300A71DD7 /* QuartzCore.framework in Frameworks */,
 				CA88B4101BF6AA5E000AF449 /* CoreLocation.framework in Frameworks */,
 				D661D92DA9B2B4AC4E6A89CA /* libPods.a in Frameworks */,
 			);
@@ -108,6 +132,14 @@
 		6F34ABA3C2D53A0CE439D5E8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CAD67C631C0571FF00A71DD7 /* libsqlite3.tbd */,
+				CAD67C611C0571F300A71DD7 /* libz.tbd */,
+				CAD67C5F1C0571E700A71DD7 /* StoreKit.framework */,
+				CAD67C5D1C0571DE00A71DD7 /* Security.framework */,
+				CAD67C551C0571D300A71DD7 /* AudioToolbox.framework */,
+				CAD67C561C0571D300A71DD7 /* CFNetwork.framework */,
+				CAD67C571C0571D300A71DD7 /* CoreGraphics.framework */,
+				CAD67C581C0571D300A71DD7 /* QuartzCore.framework */,
 				CA88B40F1BF6AA5E000AF449 /* CoreLocation.framework */,
 				9D33AE90B842060BEB57C3F5 /* libPods.a */,
 			);
@@ -262,6 +294,7 @@
 				TargetAttributes = {
 					CAA7D4F01BF6904800A8DF8E = {
 						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = 5GFQ7F65A8;
 					};
 					CAA7D5041BF6904900A8DF8E = {
 						CreatedOnToolsVersion = 7.1.1;
@@ -522,10 +555,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = CleanPlate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bryan.CleanPlate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "CleanPlate/CleanPlate-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -537,10 +573,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = CleanPlate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bryan.CleanPlate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "CleanPlate/CleanPlate-Bridging-Header.h";
 			};
 			name = Release;

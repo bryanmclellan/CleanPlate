@@ -51,6 +51,13 @@ class LandingViewController: UIViewController, CLLocationManagerDelegate {
             print("User's location is unknown")
         }
         
+        if (UIApplication.sharedApplication().canOpenURL(NSURL(string:"comgooglemaps://")!)) {
+            UIApplication.sharedApplication().openURL(NSURL(string:
+                "comgooglemaps://?center=40.765819,-73.975866&zoom=14&views=traffic")!)
+        } else {
+            print("Can't use comgooglemaps://");
+        }
+        
         
         // Do any additional setup after loading the view.
     }
