@@ -25,6 +25,7 @@ class LandingViewController: UIViewController, CLLocationManagerDelegate {
             self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
         }
         
+        
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
@@ -51,9 +52,21 @@ class LandingViewController: UIViewController, CLLocationManagerDelegate {
             print("User's location is unknown")
         }
         
-        if (UIApplication.sharedApplication().canOpenURL(NSURL(string:"comgooglemaps://")!)) {
-            UIApplication.sharedApplication().openURL(NSURL(string:
-                "comgooglemaps://?center=40.765819,-73.975866&zoom=14&views=traffic")!)
+        if (UIApplication.sharedApplication().canOpenURL(NSURL(string:"comgooglemaps-x-callback://")!)) {
+           // UIApplication.sharedApplication().openURL(NSURL(string: "comgooglemaps://?saddr=Google+Inc,+8th+Avenue,+New+York,+NY&daddr=John+F.+Kennedy+International+Airport,+Van+Wyck+Expressway,+Jamaica,+New+York&directionsmode=driving")!)
+            
+//            NSString *directionsRequest = @"comgooglemaps-x-callback://" +
+//                @"?daddr=John+F.+Kennedy+International+Airport,+Van+Wyck+Expressway,+Jamaica,+New+York" +
+//                @"&x-success=sourceapp://?resume=true&x-source=AirApp";
+//            NSURL *directionsURL = [NSURL URLWithString:directionsRequest];
+//            [[UIApplication sharedApplication] openURL:directionsURL];
+            
+            let directionsRequest = "comgooglemaps-x-callback://" +
+                "?daddr=John+F.+Kennedy+International+Airport,+Van+Wyck+Expressway,+Jamaica,+New+York" +
+                "&x-success=sourceapp://?resume=true&x-source=AirApp"
+            //let directionsURL = NSURL(string: directionsRequest)
+            
+            UIApplication.sharedApplication().openURL(NSURL(string: directionsRequest)!)
         } else {
             print("Can't use comgooglemaps://");
         }
