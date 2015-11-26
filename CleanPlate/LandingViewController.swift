@@ -9,15 +9,33 @@
 import UIKit
 import GoogleMaps
 
-class LandingViewController: UIViewController, CLLocationManagerDelegate {
+class LandingViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate {
 
     @IBOutlet weak var menuButton: UIBarButtonItem!
+    
+    var mapView: GMSMapView!
     
     let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
+        
+        let camera = GMSCameraPosition.cameraWithLatitude((locationManager.location?.coordinate.latitude)!, longitude: (locationManager.location?.coordinate.longitude)!, zoom:12)
+        mapView = GMSMapView.mapWithFrame(CGRectZero, camera:camera)
+        mapView.delegate = self
+        self.view = mapView
+        
+        mapView.myLocationEnabled = true
+        
+        let marker = GMSMarker()
+        
+        marker.position = CLLocationCoordinate2DMake(37.445605, -122.160480)
+        marker.title = "Zola"
+        marker.snippet = "Seasonal French Food"
+        marker.map = mapView
+
+
+        
         if self.revealViewController() != nil {
             menuButton.target = self.revealViewController()
             menuButton.action = "revealToggle:"
@@ -33,40 +51,20 @@ class LandingViewController: UIViewController, CLLocationManagerDelegate {
         
         
         
-        let camera = GMSCameraPosition.cameraWithLatitude(-33.86,
-            longitude: 151.20, zoom: 6)
-        let mapView = GMSMapView.mapWithFrame(CGRectZero, camera: camera)
-        mapView.myLocationEnabled = true
-        self.view = mapView
-        
-        let marker = GMSMarker()
-        marker.position = CLLocationCoordinate2DMake(-33.86, 151.20)
-        marker.title = "Sydney"
-        marker.snippet = "Australia"
-        marker.map = mapView
 
         
-        if let mylocation = mapView.myLocation {
-            print("User's location: \(mylocation)")
-        } else {
-            print("User's location is unknown")
-        }
+    
+        
+        
         
         if (UIApplication.sharedApplication().canOpenURL(NSURL(string:"comgooglemaps-x-callback://")!)) {
-           // UIApplication.sharedApplication().openURL(NSURL(string: "comgooglemaps://?saddr=Google+Inc,+8th+Avenue,+New+York,+NY&daddr=John+F.+Kennedy+International+Airport,+Van+Wyck+Expressway,+Jamaica,+New+York&directionsmode=driving")!)
-            
-//            NSString *directionsRequest = @"comgooglemaps-x-callback://" +
-//                @"?daddr=John+F.+Kennedy+International+Airport,+Van+Wyck+Expressway,+Jamaica,+New+York" +
-//                @"&x-success=sourceapp://?resume=true&x-source=AirApp";
-//            NSURL *directionsURL = [NSURL URLWithString:directionsRequest];
-//            [[UIApplication sharedApplication] openURL:directionsURL];
             
             let directionsRequest = "comgooglemaps-x-callback://" +
                 "?daddr=John+F.+Kennedy+International+Airport,+Van+Wyck+Expressway,+Jamaica,+New+York" +
                 "&x-success=sourceapp://?resume=true&x-source=AirApp"
             //let directionsURL = NSURL(string: directionsRequest)
             
-            UIApplication.sharedApplication().openURL(NSURL(string: directionsRequest)!)
+         //   UIApplication.sharedApplication().openURL(NSURL(string: directionsRequest)!)   -----------------------use to open up navigation
         } else {
             print("Can't use comgooglemaps://");
         }
@@ -77,10 +75,25 @@ class LandingViewController: UIViewController, CLLocationManagerDelegate {
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         print("got dat location doe")
+        let curLoc = locations.last
+        locations.last?.coordinate.latitude
+        let camera =  GMSCameraPosition.cameraWithLatitude((curLoc?.coordinate.latitude)!, longitude: (curLoc?.coordinate.longitude)!, zoom: 5)
+        mapView = GMSMapView.mapWithFrame(CGRectZero, camera: camera)
+        
+        locationManager.stopUpdatingLocation()
     }
+    
+    func mapView(mapView: GMSMapView!, didTapInfoWindowOfMarker marker: GMSMarker!) {
+        print("here!!")
+    }
+    
 
     func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
         print("Error while updating location " + error.localizedDescription)
+    }
+    
+    func mapView(mapView: GMSMapView!, didTapAtCoordinate coordinate: CLLocationCoordinate2D) {
+        print("You tapped at \(coordinate.latitude), \(coordinate.longitude)")
     }
 
     override func didReceiveMemoryWarning() {
