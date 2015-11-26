@@ -25,11 +25,45 @@
                     </navigationItem>
                     <connections>
                         <outlet property="menuButton" destination="kEJ-f8-4Jb" id="Pbs-pU-CJ0"/>
+                        <segue destination="BhN-b6-PiL" kind="push" identifier="detailSegue" id="iBj-hv-z5z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1005" y="589"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="Fhm-6E-SDN">
+            <objects>
+                <viewController id="BhN-b6-PiL" customClass="DetailViewController" customModule="CleanPlate" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="izk-sL-6j6"/>
+                        <viewControllerLayoutGuide type="bottom" id="Fev-yT-lAX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DLF-pU-D1P">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Info about restaurant on this page" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n7r-FU-ZmE">
+                                <rect key="frame" x="171" y="289" width="259" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="n7r-FU-ZmE" firstAttribute="centerX" secondItem="DLF-pU-D1P" secondAttribute="centerX" id="b4J-RZ-fsk"/>
+                            <constraint firstItem="n7r-FU-ZmE" firstAttribute="centerY" secondItem="DLF-pU-D1P" secondAttribute="centerY" id="zsc-ZF-Uoe"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="gKs-Ie-ZIQ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ebc-Xa-Dfd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1157" y="1294"/>
         </scene>
         <!--Rewards-->
         <scene sceneID="EpZ-V2-vdH">

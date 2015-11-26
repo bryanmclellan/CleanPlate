@@ -20,7 +20,7 @@ class LandingViewController: UIViewController, CLLocationManagerDelegate, GMSMap
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let camera = GMSCameraPosition.cameraWithLatitude((locationManager.location?.coordinate.latitude)!, longitude: (locationManager.location?.coordinate.longitude)!, zoom:12)
+        let camera = GMSCameraPosition.cameraWithLatitude((locationManager.location?.coordinate.latitude)!, longitude: (locationManager.location?.coordinate.longitude)!, zoom:7)
         mapView = GMSMapView.mapWithFrame(CGRectZero, camera:camera)
         mapView.delegate = self
         self.view = mapView
@@ -85,6 +85,12 @@ class LandingViewController: UIViewController, CLLocationManagerDelegate, GMSMap
     
     func mapView(mapView: GMSMapView!, didTapInfoWindowOfMarker marker: GMSMarker!) {
         print("here!!")
+        self.performSegueWithIdentifier("detailSegue", sender: self)
+    }
+    
+    func mapView(mapView: GMSMapView!, markerInfoWindow marker: GMSMarker!) -> UIView! {
+        var image  = UIImage(named: "AppIcon")
+        return UIImageView(image: image)
     }
     
 

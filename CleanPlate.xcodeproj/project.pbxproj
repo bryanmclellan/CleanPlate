@@ -11,6 +11,7 @@
 		CA4BBE8F1BFDC47400A02253 /* RewardsActiveTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4BBE8E1BFDC47400A02253 /* RewardsActiveTableViewCell.swift */; };
 		CA88B4101BF6AA5E000AF449 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA88B40F1BF6AA5E000AF449 /* CoreLocation.framework */; };
 		CA98F6601C0677CA0009B10B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA98F65F1C0677CA0009B10B /* Images.xcassets */; };
+		CA98F6621C06D0480009B10B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA98F6611C06D0480009B10B /* DetailViewController.swift */; };
 		CAA7D4F51BF6904800A8DF8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA7D4F41BF6904800A8DF8E /* AppDelegate.swift */; };
 		CAA7D4F71BF6904800A8DF8E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA7D4F61BF6904800A8DF8E /* ViewController.swift */; };
 		CAA7D4FA1BF6904900A8DF8E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAA7D4F81BF6904900A8DF8E /* Main.storyboard */; };
@@ -57,6 +58,7 @@
 		CA4BBE8E1BFDC47400A02253 /* RewardsActiveTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RewardsActiveTableViewCell.swift; sourceTree = "<group>"; };
 		CA88B40F1BF6AA5E000AF449 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		CA98F65F1C0677CA0009B10B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		CA98F6611C06D0480009B10B /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		CAA7D4F11BF6904800A8DF8E /* CleanPlate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CleanPlate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAA7D4F41BF6904800A8DF8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CAA7D4F61BF6904800A8DF8E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -222,6 +224,7 @@
 				CAA7D5281BF6928800A8DF8E /* SWRevealViewController.h */,
 				CAA7D5261BF6927E00A8DF8E /* SWRevealViewController.m */,
 				CAA7D5251BF6927E00A8DF8E /* CleanPlate-Bridging-Header.h */,
+				CA98F6611C06D0480009B10B /* DetailViewController.swift */,
 			);
 			name = SWReveal;
 			sourceTree = "<group>";
@@ -410,6 +413,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA98F6621C06D0480009B10B /* DetailViewController.swift in Sources */,
 				CAA7D4F71BF6904800A8DF8E /* ViewController.swift in Sources */,
 				CAA7D52A1BF692BF00A8DF8E /* MenuViewController.swift in Sources */,
 				CA4BBE8D1BFDBE8D00A02253 /* MenuTableViewCell.swift in Sources */,
