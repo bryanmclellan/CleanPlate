@@ -24,21 +24,15 @@ class LandingViewController: UIViewController, CLLocationManagerDelegate, GMSMap
         
         searchBar.delegate = self
         
-        let camera = GMSCameraPosition.cameraWithLatitude((locationManager.location?.coordinate.latitude)!, longitude: (locationManager.location?.coordinate.longitude)!, zoom:7)
+        let camera = GMSCameraPosition.cameraWithLatitude((locationManager.location?.coordinate.latitude)!, longitude: (locationManager.location?.coordinate.longitude)!, zoom:14)
         mapView.camera = camera
         mapView.delegate = self
         mapView.myLocationEnabled = true
         
-        let marker = GMSMarker()
-        
-        marker.position = CLLocationCoordinate2DMake(37.445605, -122.160480)
-        marker.title = "Zola"
-        marker.snippet = "Seasonal French Food"
-        marker.appearAnimation = kGMSMarkerAnimationPop
-        marker.map = mapView
-        markers.append(marker)
-
-        
+        addMarker("Zola", snippet: "Seasonal French Cooking", lat: 37.445605, long: -122.160480)
+        addMarker("Scoop Microcreamery", snippet: "Cute counter-serve sweet shop ", lat: 37.446868, long: -122.162683)
+        addMarker("Cheesecake Factory", snippet: "American Dining Chain with jumbo plates", lat: 37.448880, long: -122.160925)
+        addMarker("Tacolicious", snippet: "Creative Mexican taqueria and tequila bar", lat: 37.443617, long: -122.161181)
         if self.revealViewController() != nil {
             menuButton.target = self.revealViewController()
             menuButton.action = "revealToggle:"
@@ -69,6 +63,17 @@ class LandingViewController: UIViewController, CLLocationManagerDelegate, GMSMap
         // Do any additional setup after loading the view.
     }
     
+    func addMarker(title: String, snippet: String, lat: CLLocationDegrees, long: CLLocationDegrees){
+        let marker = GMSMarker()
+        
+        marker.position = CLLocationCoordinate2DMake(lat, long)
+        marker.title = title
+        marker.snippet = snippet + "\n" + "4 bags to pick up"
+        marker.appearAnimation = kGMSMarkerAnimationPop
+        marker.map = mapView
+        markers.append(marker)
+    }
+    
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
         for var m in markers{
             let lowerTitle = m.title.lowercaseString
@@ -86,7 +91,6 @@ class LandingViewController: UIViewController, CLLocationManagerDelegate, GMSMap
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         print("got dat location doe")
-        
         locationManager.stopUpdatingLocation()
     }
     
