@@ -17,14 +17,38 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Cb-mk-ghR" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="114" width="600" height="486"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="ste-93-ojQ">
+                                <rect key="frame" x="0.0" y="64" width="600" height="50"/>
+                                <animations/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.50837787830000003" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ste-93-ojQ" secondAttribute="trailing" id="4iq-5V-AcC"/>
+                            <constraint firstItem="ste-93-ojQ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="7FY-sF-jIx"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="7Cb-mk-ghR" secondAttribute="bottom" id="Nyj-ch-qXN"/>
+                            <constraint firstAttribute="trailing" secondItem="7Cb-mk-ghR" secondAttribute="trailing" id="YGv-En-ePy"/>
+                            <constraint firstItem="ste-93-ojQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Zrh-FP-dV7"/>
+                            <constraint firstItem="7Cb-mk-ghR" firstAttribute="top" secondItem="ste-93-ojQ" secondAttribute="bottom" id="mEM-im-vL2"/>
+                            <constraint firstItem="7Cb-mk-ghR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="svE-I5-g7B"/>
+                            <constraint firstItem="7Cb-mk-ghR" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="wrM-HC-aIA"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="k0m-yR-TRQ">
                         <barButtonItem key="leftBarButtonItem" title="Menu" id="kEJ-f8-4Jb"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="mapView" destination="7Cb-mk-ghR" id="ROw-4h-U7o"/>
                         <outlet property="menuButton" destination="kEJ-f8-4Jb" id="Pbs-pU-CJ0"/>
+                        <outlet property="searchBar" destination="ste-93-ojQ" id="JsF-NS-UV4"/>
                         <segue destination="BhN-b6-PiL" kind="push" identifier="detailSegue" id="iBj-hv-z5z"/>
                     </connections>
                 </viewController>

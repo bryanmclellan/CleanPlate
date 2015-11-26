@@ -9,22 +9,24 @@
 import UIKit
 import GoogleMaps
 
-class LandingViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate {
+class LandingViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate, UISearchBarDelegate {
 
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
-    var mapView: GMSMapView!
+    @IBOutlet weak var searchBar: UISearchBar!
+    var markers:[GMSMarker] = [GMSMarker]()
     
+    @IBOutlet weak var mapView: GMSMapView!
     let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let camera = GMSCameraPosition.cameraWithLatitude((locationManager.location?.coordinate.latitude)!, longitude: (locationManager.location?.coordinate.longitude)!, zoom:7)
-        mapView = GMSMapView.mapWithFrame(CGRectZero, camera:camera)
-        mapView.delegate = self
-        self.view = mapView
+        searchBar.delegate = self
         
+        let camera = GMSCameraPosition.cameraWithLatitude((locationManager.location?.coordinate.latitude)!, longitude: (locationManager.location?.coordinate.longitude)!, zoom:7)
+        mapView.camera = camera
+        mapView.delegate = self
         mapView.myLocationEnabled = true
         
         let marker = GMSMarker()
@@ -32,8 +34,9 @@ class LandingViewController: UIViewController, CLLocationManagerDelegate, GMSMap
         marker.position = CLLocationCoordinate2DMake(37.445605, -122.160480)
         marker.title = "Zola"
         marker.snippet = "Seasonal French Food"
+        marker.appearAnimation = kGMSMarkerAnimationPop
         marker.map = mapView
-
+        markers.append(marker)
 
         
         if self.revealViewController() != nil {
@@ -48,13 +51,6 @@ class LandingViewController: UIViewController, CLLocationManagerDelegate, GMSMap
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
-        
-        
-        
-
-        
-    
-        
         
         
         if (UIApplication.sharedApplication().canOpenURL(NSURL(string:"comgooglemaps-x-callback://")!)) {
@@ -73,12 +69,23 @@ class LandingViewController: UIViewController, CLLocationManagerDelegate, GMSMap
         // Do any additional setup after loading the view.
     }
     
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        for var m in markers{
+            let lowerTitle = m.title.lowercaseString
+            let lowerSearch = searchText.lowercaseString
+            if !lowerTitle.containsString(lowerSearch) && searchText != ""{
+                m.map = nil
+            }
+            else{
+                if(m.map == nil){
+                    m.map = mapView
+                }
+            }
+        }
+    }
+    
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         print("got dat location doe")
-        let curLoc = locations.last
-        locations.last?.coordinate.latitude
-        let camera =  GMSCameraPosition.cameraWithLatitude((curLoc?.coordinate.latitude)!, longitude: (curLoc?.coordinate.longitude)!, zoom: 5)
-        mapView = GMSMapView.mapWithFrame(CGRectZero, camera: camera)
         
         locationManager.stopUpdatingLocation()
     }
@@ -86,12 +93,16 @@ class LandingViewController: UIViewController, CLLocationManagerDelegate, GMSMap
     func mapView(mapView: GMSMapView!, didTapInfoWindowOfMarker marker: GMSMarker!) {
         print("here!!")
         self.performSegueWithIdentifier("detailSegue", sender: self)
+        
     }
     
-    func mapView(mapView: GMSMapView!, markerInfoWindow marker: GMSMarker!) -> UIView! {
-        var image  = UIImage(named: "AppIcon")
-        return UIImageView(image: image)
-    }
+//    func mapView(mapView: GMSMapView!, markerInfoWindow marker: GMSMarker!) -> UIView! {
+//        let image  = UIImage(named: "AppIcon")
+//        return UIImageView(image: image)
+//    }
+    
+    func searchBarTextDidEndEditing(searchBar: UISearchBar) {
+            }
     
 
     func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
@@ -100,6 +111,7 @@ class LandingViewController: UIViewController, CLLocationManagerDelegate, GMSMap
     
     func mapView(mapView: GMSMapView!, didTapAtCoordinate coordinate: CLLocationCoordinate2D) {
         print("You tapped at \(coordinate.latitude), \(coordinate.longitude)")
+        searchBar.endEditing(true)
     }
 
     override func didReceiveMemoryWarning() {
