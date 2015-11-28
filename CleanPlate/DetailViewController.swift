@@ -10,8 +10,23 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
+    @IBOutlet weak var restaurantNameLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var hoursLabel: UILabel!
+    @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var numberOfBagsLabel: UILabel!
+    var restaurantNameText = ""
+    var descriptionText = ""
+    var hoursText = ""
+    var addressText = ""
+    var numberOfBagsText = ""
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        restaurantNameLabel.text = restaurantNameText
+        descriptionLabel.text = descriptionText
 
         // Do any additional setup after loading the view.
     }
@@ -21,6 +36,9 @@ class DetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func pickUpWasPressed(sender: UIButton) {
+            
+    }
 
     /*
     // MARK: - Navigation

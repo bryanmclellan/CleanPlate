@@ -23,8 +23,8 @@ class LandingViewController: UIViewController, CLLocationManagerDelegate, GMSMap
         super.viewDidLoad()
         
         searchBar.delegate = self
+        let camera = GMSCameraPosition.cameraWithLatitude((locationManager.location?.coordinate.latitude)!, longitude: (locationManager.location?.coordinate.longitude)!, zoom: 14)
         
-        let camera = GMSCameraPosition.cameraWithLatitude((locationManager.location?.coordinate.latitude)!, longitude: (locationManager.location?.coordinate.longitude)!, zoom:14)
         mapView.camera = camera
         mapView.delegate = self
         mapView.myLocationEnabled = true
@@ -96,7 +96,7 @@ class LandingViewController: UIViewController, CLLocationManagerDelegate, GMSMap
     
     func mapView(mapView: GMSMapView!, didTapInfoWindowOfMarker marker: GMSMarker!) {
         print("here!!")
-        self.performSegueWithIdentifier("detailSegue", sender: self)
+        self.performSegueWithIdentifier("detailSegue", sender: marker)
         
     }
     
@@ -124,14 +124,22 @@ class LandingViewController: UIViewController, CLLocationManagerDelegate, GMSMap
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "detailSegue" {
+            let detailVC = segue.destinationViewController as! DetailViewController
+            let marker = sender as! GMSMarker
+            
+            detailVC.restaurantNameText = marker.title
+            detailVC.descriptionText = marker.snippet
+        }
+        
     }
-    */
+    
 
 }

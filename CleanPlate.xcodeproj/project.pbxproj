@@ -187,6 +187,7 @@
 				CA4BBE8B1BFDBE7800A02253 /* Cells */,
 				CAA7D5241BF6925400A8DF8E /* SWReveal */,
 				CAA7D4F41BF6904800A8DF8E /* AppDelegate.swift */,
+				CA98F6611C06D0480009B10B /* DetailViewController.swift */,
 				CAA7D4F61BF6904800A8DF8E /* ViewController.swift */,
 				CAA7D4F81BF6904900A8DF8E /* Main.storyboard */,
 				CAA7D4FB1BF6904900A8DF8E /* Assets.xcassets */,
@@ -224,7 +225,6 @@
 				CAA7D5281BF6928800A8DF8E /* SWRevealViewController.h */,
 				CAA7D5261BF6927E00A8DF8E /* SWRevealViewController.m */,
 				CAA7D5251BF6927E00A8DF8E /* CleanPlate-Bridging-Header.h */,
-				CA98F6611C06D0480009B10B /* DetailViewController.swift */,
 			);
 			name = SWReveal;
 			sourceTree = "<group>";
