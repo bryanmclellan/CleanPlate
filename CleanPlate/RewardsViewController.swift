@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RewardsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class RewardsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, SWRevealViewControllerDelegate {
 
     
     @IBOutlet weak var ActiveOrRedeemSegControl: UISegmentedControl!
@@ -27,10 +27,16 @@ class RewardsViewController: UIViewController, UITableViewDataSource, UITableVie
     var redeemedDescriptions = [String]()
     var redeemedImages = [String]()
     
+    var cameFromShelter = false
+    
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.revealViewController().delegate = self
+        
+        if cameFromShelter {
+        }
         
         if self.revealViewController() != nil {
             menuButton.target = self.revealViewController()
@@ -186,6 +192,9 @@ class RewardsViewController: UIViewController, UITableViewDataSource, UITableVie
         redeemedDescriptions.append(rewardDescriptions.removeAtIndex(index))
         redeemedImages.append( rewardImages.removeAtIndex(index))
 
+    }
+    
+    func revealController(revealController: SWRevealViewController!, willMoveToPosition position: FrontViewPosition) {
     }
     
 

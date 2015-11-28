@@ -74,9 +74,7 @@ class DetailViewController: UIViewController {
             alert.addAction(self.noAction)
             alert.addAction(self.yesAction)
             
-            self.presentViewController(alert, animated: true) { () -> Void in
-                
-            }
+            self.presentViewController(alert, animated: true, completion: nil)
         }
         
         let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: nil)
@@ -89,6 +87,7 @@ class DetailViewController: UIViewController {
 
     func onHudTap(){
         MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
+        self.performSegueWithIdentifier("shelterSegue", sender: self)
     }
     
     @IBAction func dismissHUD(sender: AnyObject) {

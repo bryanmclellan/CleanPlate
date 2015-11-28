@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA3B08131C095B5D00C7CDD4 /* SheltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3B08121C095B5D00C7CDD4 /* SheltersViewController.swift */; };
 		CA4BBE8D1BFDBE8D00A02253 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4BBE8C1BFDBE8D00A02253 /* MenuTableViewCell.swift */; };
 		CA4BBE8F1BFDC47400A02253 /* RewardsActiveTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4BBE8E1BFDC47400A02253 /* RewardsActiveTableViewCell.swift */; };
 		CA88B4101BF6AA5E000AF449 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA88B40F1BF6AA5E000AF449 /* CoreLocation.framework */; };
@@ -54,6 +55,7 @@
 /* Begin PBXFileReference section */
 		9B5DD2A48E742BAAD3637612 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		9D33AE90B842060BEB57C3F5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA3B08121C095B5D00C7CDD4 /* SheltersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SheltersViewController.swift; sourceTree = "<group>"; };
 		CA4BBE8C1BFDBE8D00A02253 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
 		CA4BBE8E1BFDC47400A02253 /* RewardsActiveTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RewardsActiveTableViewCell.swift; sourceTree = "<group>"; };
 		CA88B40F1BF6AA5E000AF449 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -187,6 +189,7 @@
 				CA4BBE8B1BFDBE7800A02253 /* Cells */,
 				CAA7D5241BF6925400A8DF8E /* SWReveal */,
 				CAA7D4F41BF6904800A8DF8E /* AppDelegate.swift */,
+				CA3B08121C095B5D00C7CDD4 /* SheltersViewController.swift */,
 				CA98F6611C06D0480009B10B /* DetailViewController.swift */,
 				CAA7D4F61BF6904800A8DF8E /* ViewController.swift */,
 				CAA7D4F81BF6904900A8DF8E /* Main.storyboard */,
@@ -421,6 +424,7 @@
 				CA4BBE8F1BFDC47400A02253 /* RewardsActiveTableViewCell.swift in Sources */,
 				CAA7D52C1BF6988500A8DF8E /* RewardsViewController.swift in Sources */,
 				CAA7D4F51BF6904800A8DF8E /* AppDelegate.swift in Sources */,
+				CA3B08131C095B5D00C7CDD4 /* SheltersViewController.swift in Sources */,
 				CAA7D5271BF6927E00A8DF8E /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

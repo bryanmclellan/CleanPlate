@@ -202,11 +202,12 @@
                         <outlet property="hoursLabel" destination="CWf-hi-wi5" id="vY2-Zb-c5l"/>
                         <outlet property="numberOfBagsLabel" destination="XFn-K7-DaE" id="OTL-Pm-gcA"/>
                         <outlet property="restaurantNameLabel" destination="gtP-4d-Swd" id="SiG-eG-7Hf"/>
+                        <segue destination="tm5-eX-wUh" kind="push" identifier="shelterSegue" id="wol-XV-Jsf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ebc-Xa-Dfd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1157" y="1294"/>
+            <point key="canvasLocation" x="1115" y="1294"/>
         </scene>
         <!--Rewards-->
         <scene sceneID="EpZ-V2-vdH">
@@ -444,7 +445,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AVD-eM-rWC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3226" y="600"/>
+            <point key="canvasLocation" x="3368" y="757"/>
         </scene>
         <!--Reveal View Controller-->
         <scene sceneID="3bl-tP-Tku">
@@ -586,11 +587,59 @@
             </objects>
             <point key="canvasLocation" x="1799" y="589"/>
         </scene>
+        <!--Shelters View Controller-->
+        <scene sceneID="3yE-CR-Duk">
+            <objects>
+                <viewController id="tm5-eX-wUh" customClass="SheltersViewController" customModule="CleanPlate" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5MF-vZ-YG4"/>
+                        <viewControllerLayoutGuide type="bottom" id="XQB-Ps-r7r"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nWO-2h-dGX">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8B9-kK-jaV" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="114" width="600" height="486"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.56470588239999997" green="0.75686274509999996" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="g9f-Pd-yT3">
+                                <rect key="frame" x="0.0" y="64" width="600" height="50"/>
+                                <animations/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="g9f-Pd-yT3" secondAttribute="trailing" id="33B-N5-fqC"/>
+                            <constraint firstItem="g9f-Pd-yT3" firstAttribute="top" secondItem="5MF-vZ-YG4" secondAttribute="bottom" id="Ase-Ux-qKZ"/>
+                            <constraint firstItem="g9f-Pd-yT3" firstAttribute="leading" secondItem="nWO-2h-dGX" secondAttribute="leading" id="O1L-sb-5nw"/>
+                            <constraint firstAttribute="trailing" secondItem="8B9-kK-jaV" secondAttribute="trailing" id="mo0-wX-7hb"/>
+                            <constraint firstItem="8B9-kK-jaV" firstAttribute="leading" secondItem="nWO-2h-dGX" secondAttribute="leading" id="oAz-XF-JBC"/>
+                            <constraint firstItem="8B9-kK-jaV" firstAttribute="top" secondItem="5MF-vZ-YG4" secondAttribute="bottom" constant="50" id="oTv-9Y-WAx"/>
+                            <constraint firstItem="8B9-kK-jaV" firstAttribute="top" secondItem="g9f-Pd-yT3" secondAttribute="bottom" id="tn6-Mn-zLu"/>
+                            <constraint firstItem="XQB-Ps-r7r" firstAttribute="top" secondItem="8B9-kK-jaV" secondAttribute="bottom" id="yx8-1E-d8G"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="R6m-ZV-GVq"/>
+                    <connections>
+                        <outlet property="mapView" destination="8B9-kK-jaV" id="G22-d0-23w"/>
+                        <outlet property="searchBar" destination="g9f-Pd-yT3" id="hgx-Qb-LJU"/>
+                        <segue destination="FcP-JM-o4f" kind="push" identifier="rewardSegue" id="DLX-IY-yK9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="evy-mX-pFi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1892" y="1338"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="3XX-6b-82U">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="F2A-LZ-HGn" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="qx2-8j-cCY"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="QSz-ST-XMm">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -603,7 +652,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UZJ-xk-l2r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2414" y="600"/>
+            <point key="canvasLocation" x="2662" y="757"/>
         </scene>
     </scenes>
     <resources>
@@ -612,5 +661,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="460-mi-4Pt"/>
+        <segue reference="DLX-IY-yK9"/>
     </inferredMetricsTieBreakers>
 </document>

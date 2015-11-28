@@ -61,6 +61,8 @@ class LandingViewController: UIViewController, CLLocationManagerDelegate, GMSMap
         markers.append(marker)
     }
     
+    
+    
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
         for var m in markers{
             let lowerTitle = m.title.lowercaseString
