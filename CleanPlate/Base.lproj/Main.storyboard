@@ -78,7 +78,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NhE-aD-3yR">
                                 <rect key="frame" x="10" y="150" width="580" height="142.5"/>
                                 <animations/>
-                                <mutableString key="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing soft</mutableString>
+                                <string key="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing soft</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -155,6 +155,14 @@
                                     <action selector="pickUpWasPressed:" destination="BhN-b6-PiL" eventType="touchUpInside" id="oae-CC-fQv"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ahy-8A-TxA">
+                                <rect key="frame" x="544" y="559" width="46" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="dismissHUD:" destination="BhN-b6-PiL" eventType="touchUpInside" id="2Ei-aa-NGc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -175,10 +183,12 @@
                             <constraint firstItem="NhE-aD-3yR" firstAttribute="leading" secondItem="DLF-pU-D1P" secondAttribute="leading" constant="10" id="cYz-5a-NxJ"/>
                             <constraint firstItem="NwG-SV-sg0" firstAttribute="top" secondItem="XFn-K7-DaE" secondAttribute="bottom" constant="6" id="dof-zJ-Dsz"/>
                             <constraint firstItem="Fev-yT-lAX" firstAttribute="top" secondItem="Tbz-vh-r60" secondAttribute="bottom" constant="8" id="eM7-of-T5U"/>
+                            <constraint firstAttribute="trailing" secondItem="ahy-8A-TxA" secondAttribute="trailing" constant="10" id="fjp-go-5UW"/>
                             <constraint firstItem="XFn-K7-DaE" firstAttribute="centerX" secondItem="DLF-pU-D1P" secondAttribute="centerX" id="mxS-R6-2PG"/>
                             <constraint firstItem="CWf-hi-wi5" firstAttribute="leading" secondItem="DLF-pU-D1P" secondAttribute="leading" constant="10" id="p1O-r7-aov"/>
                             <constraint firstItem="CWf-hi-wi5" firstAttribute="top" secondItem="NhE-aD-3yR" secondAttribute="bottom" constant="15" id="pYR-JM-o9z"/>
                             <constraint firstItem="zei-dI-eRV" firstAttribute="leading" secondItem="P9W-gX-AHv" secondAttribute="trailing" id="tdx-zs-Szy"/>
+                            <constraint firstItem="Fev-yT-lAX" firstAttribute="top" secondItem="ahy-8A-TxA" secondAttribute="bottom" constant="11" id="tgV-Aj-id0"/>
                             <constraint firstAttribute="trailing" secondItem="gtP-4d-Swd" secondAttribute="trailing" id="tgY-bt-Ema"/>
                             <constraint firstItem="NwG-SV-sg0" firstAttribute="centerX" secondItem="DLF-pU-D1P" secondAttribute="centerX" id="uLx-gO-7gX"/>
                             <constraint firstItem="bzL-4o-XM7" firstAttribute="leading" secondItem="DLF-pU-D1P" secondAttribute="leading" constant="10" id="vIB-K2-dPe"/>

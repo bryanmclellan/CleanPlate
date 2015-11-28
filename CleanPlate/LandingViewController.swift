@@ -47,19 +47,6 @@ class LandingViewController: UIViewController, CLLocationManagerDelegate, GMSMap
         locationManager.startUpdatingLocation()
         
         
-        if (UIApplication.sharedApplication().canOpenURL(NSURL(string:"comgooglemaps-x-callback://")!)) {
-            
-            let directionsRequest = "comgooglemaps-x-callback://" +
-                "?daddr=John+F.+Kennedy+International+Airport,+Van+Wyck+Expressway,+Jamaica,+New+York" +
-                "&x-success=sourceapp://?resume=true&x-source=AirApp"
-            //let directionsURL = NSURL(string: directionsRequest)
-            
-         //   UIApplication.sharedApplication().openURL(NSURL(string: directionsRequest)!)   -----------------------use to open up navigation
-        } else {
-            print("Can't use comgooglemaps://");
-        }
-        
-        
         // Do any additional setup after loading the view.
     }
     
