@@ -22,6 +22,8 @@ class SheltersViewController: UIViewController, CLLocationManagerDelegate, GMSMa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationItem.title = "3. Find a shelter"
         searchBar.delegate = self
         let camera = GMSCameraPosition.cameraWithLatitude((locationManager.location?.coordinate.latitude)!, longitude: (locationManager.location?.coordinate.longitude)!, zoom: 14)
         
@@ -67,6 +69,10 @@ class SheltersViewController: UIViewController, CLLocationManagerDelegate, GMSMa
             let tap = UITapGestureRecognizer(target: self, action: "onHudTap")
             hud.addGestureRecognizer(tap)
         }
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        self.navigationItem.title = ""
     }
 
     override func didReceiveMemoryWarning() {

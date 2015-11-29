@@ -22,6 +22,8 @@ class LandingViewController: UIViewController, CLLocationManagerDelegate, GMSMap
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.title = "1. Find a restaurant"
+        
         searchBar.delegate = self
         let camera = GMSCameraPosition.cameraWithLatitude((locationManager.location?.coordinate.latitude)!, longitude: (locationManager.location?.coordinate.longitude)!, zoom: 14)
         
@@ -48,6 +50,10 @@ class LandingViewController: UIViewController, CLLocationManagerDelegate, GMSMap
         
         
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        self.navigationItem.title = ""
     }
     
     func addMarker(title: String, snippet: String, lat: CLLocationDegrees, long: CLLocationDegrees){
