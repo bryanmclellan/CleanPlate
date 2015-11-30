@@ -40,7 +40,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if(indexPath.row == 2 || indexPath.row == 0){
+        if(indexPath.row == 2 || indexPath.row == 0 || indexPath.row == 1){
             self.performSegueWithIdentifier(CellLabels[indexPath.row] + "Segue", sender: self)
         }
     }
