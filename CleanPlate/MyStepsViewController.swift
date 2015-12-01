@@ -1,29 +1,22 @@
 //
-//  RecentViewController.swift
+//  MyStepsViewController.swift
 //  CleanPlate
 //
-//  Created by Bryan McLellan on 11/29/15.
+//  Created by Bryan McLellan on 11/30/15.
 //  Copyright © 2015 CleanPlate. All rights reserved.
 //
 
 import UIKit
 
-class RecentViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class MyStepsViewController: RMStepsController {
 
     @IBOutlet weak var menuButton: UIBarButtonItem!
-    
-    @IBOutlet weak var tableView: UITableView!
-    
-    let recentArray = ["Screen Shot 2015-11-29 at 9.23.17 PM", "Screen Shot 2015-11-29 at 9.25.06 PM", "Screen Shot 2015-11-29 at 9.24.49 PM"]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.delegate = self
-        tableView.dataSource = self
+        self.stepsBar.hideCancelButton = true
 
         // Do any additional setup after loading the view.
-        self.automaticallyAdjustsScrollViewInsets = false
         
         if self.revealViewController() != nil {
             menuButton.target = self.revealViewController()
@@ -31,28 +24,35 @@ class RecentViewController: UIViewController, UITableViewDataSource, UITableView
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
             self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
         }
-
-    }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("recentCell", forIndexPath: indexPath) as! RecentTableViewCell
-        let image = UIImage(named: recentArray[indexPath.row])
-        cell.mapImage.image = image
-        return cell
-    }
-    
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 180
-    }
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func stepViewControllers() -> [AnyObject]! {
+        let first = self.storyboard?.instantiateViewControllerWithIdentifier("Landing")
+        first!.step.title = "Select your restaurant"
+        
+        
+        let second = self.storyboard?.instantiateViewControllerWithIdentifier("Detail")
+        second!.step.title = "Confirm the pickup"
+        
+        
+        let third = self.storyboard?.instantiateViewControllerWithIdentifier("Shelter")
+        third!.step.title = "Find a Shelter"
+        
+        let fourth = self.storyboard?.instantiateViewControllerWithIdentifier("Reward")
+        fourth!.step.title = "Claim the reward"
+        
+        return [first!, second!, third!, fourth!]
+    }
+    
+
+    
+    
+    
     
 
     /*

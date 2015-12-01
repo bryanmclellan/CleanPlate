@@ -29,10 +29,15 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>RMStepsController.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0E996AFE4D20F29FCB9E9DD2FB446955</key>
+		<key>3E7B8E8003783ADDF922E31F4B1D101D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -48,6 +53,11 @@
 			<true/>
 		</dict>
 		<key>B53DF583949C0313F8655A28EF6EB07D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BFDE80FF30FA8395D4082FB3A05B0439</key>
 		<dict>
 			<key>primary</key>
 			<true/>

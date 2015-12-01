@@ -13,6 +13,8 @@ class LandingViewController: UIViewController, CLLocationManagerDelegate, GMSMap
 
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
+    @IBOutlet weak var stepBar: RMStepsBar!
+    
     @IBOutlet weak var searchBar: UISearchBar!
     var markers:[GMSMarker] = [GMSMarker]()
     
@@ -21,6 +23,7 @@ class LandingViewController: UIViewController, CLLocationManagerDelegate, GMSMap
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         self.navigationItem.title = "1. Find a restaurant"
         
@@ -51,6 +54,9 @@ class LandingViewController: UIViewController, CLLocationManagerDelegate, GMSMap
         
         // Do any additional setup after loading the view.
     }
+    
+    
+    
     
     override func viewWillDisappear(animated: Bool) {
         self.navigationItem.title = ""
@@ -91,7 +97,9 @@ class LandingViewController: UIViewController, CLLocationManagerDelegate, GMSMap
     
     func mapView(mapView: GMSMapView!, didTapInfoWindowOfMarker marker: GMSMarker!) {
         print("here!!")
-        self.performSegueWithIdentifier("detailSegue", sender: marker)
+       // self.performSegueWithIdentifier("detailSegue", sender: marker)
+        print(" here we go \(self.stepsController)")
+        self.stepsController.showNextStep()
         
     }
     

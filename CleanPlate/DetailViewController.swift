@@ -93,7 +93,8 @@ class DetailViewController: UIViewController {
 
     func onHudTap(){
         MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
-        self.performSegueWithIdentifier("shelterSegue", sender: self)
+       // self.performSegueWithIdentifier("shelterSegue", sender: self)
+        self.stepsController.showNextStep()
     }
     
     @IBAction func dismissHUD(sender: AnyObject) {

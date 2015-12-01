@@ -10,6 +10,7 @@ PODS:
   - MBProgressHUD (0.9.1)
   - Parse (1.10.0):
     - Bolts/Tasks (~> 1.5)
+  - RMStepsController (1.0.2)
 
 DEPENDENCIES:
   - Bolts
@@ -17,6 +18,7 @@ DEPENDENCIES:
   - GoogleMaps
   - MBProgressHUD (~> 0.9.1)
   - Parse
+  - RMStepsController (~> 1.0.2)
 
 SPEC CHECKSUMS:
   Bolts: 722ab9a4f8b50fc4ed1b9998a5a7a2b3f16d80b4
@@ -24,5 +26,6 @@ SPEC CHECKSUMS:
   GoogleMaps: da51c62c338c2d9c47cdad470a0d1e0e4b8544e4
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
   Parse: 90b2544822200f84b18bfacc4e8b0a3a6c3584a2
+  RMStepsController: 195aa02c57ee5fea74483d0b9dcc30881ae7639d
 
 COCOAPODS: 0.39.0
