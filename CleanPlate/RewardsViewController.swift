@@ -35,7 +35,9 @@ class RewardsViewController: UIViewController, UITableViewDataSource, UITableVie
         super.viewDidLoad()
         self.revealViewController().delegate = self
         
-        if cameFromShelter {
+        if !cameFromShelter {
+            print("moving up")
+            self.activeTableView.frame = CGRect(x: self.activeTableView.frame.origin.x, y: self.activeTableView.frame.origin.y-44, width: self.activeTableView.frame.width, height: self.activeTableView.frame.height)
         }
         
         if self.revealViewController() != nil {

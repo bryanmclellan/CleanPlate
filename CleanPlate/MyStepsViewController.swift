@@ -43,10 +43,11 @@ class MyStepsViewController: RMStepsController {
         let third = self.storyboard?.instantiateViewControllerWithIdentifier("Shelter")
         third!.step.title = "Find a Shelter"
         
-        let fourth = self.storyboard?.instantiateViewControllerWithIdentifier("Reward")
-        fourth!.step.title = "Claim the reward"
+//        let fourth = self.storyboard?.instantiateViewControllerWithIdentifier("Reward") as! RewardsViewController
+//        fourth.step.title = "Claim the reward"
+//        fourth.cameFromShelter = true
         
-        return [first!, second!, third!, fourth!]
+        return [first!, second!, third!]
     }
     
 

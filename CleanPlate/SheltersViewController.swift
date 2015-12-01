@@ -111,8 +111,8 @@ class SheltersViewController: UIViewController, CLLocationManagerDelegate, GMSMa
        // self.performSegueWithIdentifier("shelterSegue", sender: self)
         let alert = UIAlertController(title: "Claim Reward", message: "You have got a new reward. Check it out!", preferredStyle: UIAlertControllerStyle.Alert)
         let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default) { (UIAlertAction) -> Void in
-          //  self.performSegueWithIdentifier("rewardSegue", sender: self)
-            self.stepsController.showNextStep()
+            self.performSegueWithIdentifier("rewardSegue", sender: self)
+          //  self.stepsController.showNextStep()
         }
         
         alert.addAction(okAction)
