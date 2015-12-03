@@ -22,6 +22,7 @@ class DetailViewController: UIViewController {
     var yesAction = UIAlertAction()
     var noAction = UIAlertAction()
     
+    @IBOutlet weak var pickUpIconButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,8 +30,8 @@ class DetailViewController: UIViewController {
         self.navigationItem.title = "2. Confirm Pickup"
         
         restaurantNameLabel.text = Util.sharedInstance.restaurantName
-       // hoursLabel.text = hoursText
-
+        hoursLabel.text = "8:00 am - 10:00 pm"
+        
         // Do any additional setup after loading the view.
         
         yesAction = UIAlertAction(title: "Yes", style: UIAlertActionStyle.Default) { (UIAlertAction) -> Void in
@@ -69,6 +70,12 @@ class DetailViewController: UIViewController {
     override func viewWillDisappear(animated: Bool) {
         self.navigationItem.title = ""
     }
+    
+    
+    @IBAction func cancelWasPressed(sender: AnyObject) {
+        self.stepsController.showPreviousStep()
+    }
+    
     
     @IBAction func pickUpWasPressed(sender: UIButton) {
         let pickUpAlert = UIAlertController(title: "Confirm Pick Up?", message: "You are commiting to making this pick up", preferredStyle: UIAlertControllerStyle.Alert)
