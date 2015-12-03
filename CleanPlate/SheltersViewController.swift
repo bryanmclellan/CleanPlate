@@ -145,6 +145,10 @@ class SheltersViewController: UIViewController, CLLocationManagerDelegate, GMSMa
     
     }
     
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        searchBar.endEditing(true)
+    }
+    
 
     
     // MARK: - Navigation

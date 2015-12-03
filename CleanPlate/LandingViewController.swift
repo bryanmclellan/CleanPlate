@@ -131,6 +131,10 @@ class LandingViewController: UIViewController, CLLocationManagerDelegate, GMSMap
         // Dispose of any resources that can be recreated.
     }
     
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        searchBar.endEditing(true)
+    }
+    
 
     
     // MARK: - Navigation

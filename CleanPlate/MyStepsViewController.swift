@@ -49,11 +49,11 @@ class MyStepsViewController: RMStepsController {
         
         
         let second = self.storyboard?.instantiateViewControllerWithIdentifier("Detail")
-        second!.step.title = "Confirm the pickup"
+        second!.step.title = "Commit to pick up leftover food"
         
         
         let third = self.storyboard?.instantiateViewControllerWithIdentifier("Shelter")
-        third!.step.title = "Find a Shelter"
+        third!.step.title = "Find and deliver to shelter"
         
 //        let fourth = self.storyboard?.instantiateViewControllerWithIdentifier("Reward") as! RewardsViewController
 //        fourth.step.title = "Claim the reward"

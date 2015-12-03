@@ -48,7 +48,7 @@ class DetailViewController: UIViewController {
                 print("Can't use comgooglemaps://");
             }
             let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-            hud.labelText = "Waiting for pick up confirmation"
+            hud.labelText = "Waiting for restaurant to confirm pick up"
             let tap = UITapGestureRecognizer(target: self, action: "onHudTap")
             hud.addGestureRecognizer(tap)
         }
@@ -56,7 +56,7 @@ class DetailViewController: UIViewController {
         noAction = UIAlertAction(title: "No", style: UIAlertActionStyle.Default) { (UIAlertAction) -> Void in
             print("No directions requested")
             let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-            hud.labelText = "Waiting for pick up confirmation"
+            hud.labelText = "Waiting for restaurant to confirm pick up"
             let tap = UITapGestureRecognizer(target: self, action: "onHudTap")
             hud.addGestureRecognizer(tap)
         }

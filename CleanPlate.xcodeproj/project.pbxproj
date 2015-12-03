@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CA29A0371C0FF02800C473BF /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA29A0361C0FF02800C473BF /* Util.swift */; };
+		CA29A0391C10101B00C473BF /* PlatesServedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA29A0381C10101B00C473BF /* PlatesServedViewController.swift */; };
 		CA3B08131C095B5D00C7CDD4 /* SheltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3B08121C095B5D00C7CDD4 /* SheltersViewController.swift */; };
 		CA4BBE8D1BFDBE8D00A02253 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4BBE8C1BFDBE8D00A02253 /* MenuTableViewCell.swift */; };
 		CA4BBE8F1BFDC47400A02253 /* RewardsActiveTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4BBE8E1BFDC47400A02253 /* RewardsActiveTableViewCell.swift */; };
@@ -62,6 +63,7 @@
 		9B5DD2A48E742BAAD3637612 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		9D33AE90B842060BEB57C3F5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA29A0361C0FF02800C473BF /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		CA29A0381C10101B00C473BF /* PlatesServedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlatesServedViewController.swift; sourceTree = "<group>"; };
 		CA3B08121C095B5D00C7CDD4 /* SheltersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SheltersViewController.swift; sourceTree = "<group>"; };
 		CA4BBE8C1BFDBE8D00A02253 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
 		CA4BBE8E1BFDC47400A02253 /* RewardsActiveTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RewardsActiveTableViewCell.swift; sourceTree = "<group>"; };
@@ -218,6 +220,7 @@
 				CA793C471C0D545D0009466E /* MyStepsViewController.swift */,
 				CA793C491C0D784B0009466E /* FavoritesViewController.swift */,
 				CA29A0361C0FF02800C473BF /* Util.swift */,
+				CA29A0381C10101B00C473BF /* PlatesServedViewController.swift */,
 			);
 			path = CleanPlate;
 			sourceTree = "<group>";
@@ -437,6 +440,7 @@
 				CA98F6621C06D0480009B10B /* DetailViewController.swift in Sources */,
 				CAA7D4F71BF6904800A8DF8E /* ViewController.swift in Sources */,
 				CA793C4A1C0D784B0009466E /* FavoritesViewController.swift in Sources */,
+				CA29A0391C10101B00C473BF /* PlatesServedViewController.swift in Sources */,
 				CA29A0371C0FF02800C473BF /* Util.swift in Sources */,
 				CAA10BC21C0C1B8A0097C8B9 /* RecentViewController.swift in Sources */,
 				CA793C481C0D545D0009466E /* MyStepsViewController.swift in Sources */,
