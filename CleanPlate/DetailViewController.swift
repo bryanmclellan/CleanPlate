@@ -24,13 +24,18 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var pickUpIconButton: UIButton!
     
+    @IBOutlet weak var coverImageView: UIImageView!
+    var imagesDict: [String: String] = [
+        "Zola" : "zola-wide",
+        "Sancho Taqueria": "sanchos-wide",
+        "Darbar Indian Cuisine" : "darbar-wide",
+        "Buca di Beppo": "buca-wide"
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.navigationItem.title = "2. Confirm Pickup"
-        
-        restaurantNameLabel.text = Util.sharedInstance.restaurantName
-        hoursLabel.text = Util.sharedInstance.getRestaurantHours()
         
         // Do any additional setup after loading the view.
         
@@ -60,6 +65,15 @@ class DetailViewController: UIViewController {
             let tap = UITapGestureRecognizer(target: self, action: "onHudTap")
             hud.addGestureRecognizer(tap)
         }
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        restaurantNameLabel.text = Util.sharedInstance.restaurantName
+        hoursLabel.text = Util.sharedInstance.getRestaurantHours()
+        addressLabel.text = Util.sharedInstance.restaurantAddr
+        
+        coverImageView.image = UIImage(named: imagesDict[Util.sharedInstance.restaurantName]!)
     }
 
     override func didReceiveMemoryWarning() {

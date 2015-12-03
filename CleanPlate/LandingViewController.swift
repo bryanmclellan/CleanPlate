@@ -12,9 +12,19 @@ import GoogleMaps
 class LandingViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate, UISearchBarDelegate {
     
     var hoursDict: [String:String] = [
-        "Zola" : "Friday 5:00 – 10:00 PM"
-        
+        "Zola" : "Friday 5:00 – 10:00 PM",
+        "Sancho Taqueria" : "Friday 10:30 AM – 9:00 PM",
+        "Darbar Indian Cuisine" : "11:00 AM – 2:30 PM, 5:00 – 10:00 PM",
+        "Buca di Beppo" : "11:00 AM – 11:00 PM"
     ]
+    
+    var addrDict: [String:String] = [
+        "Zola" : "565 Bryant St, Palo Alto, CA 94301",
+        "Sancho Taqueria" : "2723 Middlefield Road, Palo Alto, CA 94306",
+        "Darbar Indian Cuisine" : "129 Lytton Ave, Palo Alto, CA 94301",
+        "Buca di Beppo" : "643 Emerson St, Palo Alto, CA 94301"
+    ]
+    
 
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
@@ -40,10 +50,10 @@ class LandingViewController: UIViewController, CLLocationManagerDelegate, GMSMap
         mapView.delegate = self
         mapView.myLocationEnabled = true
         
-        addMarker("Zola", snippet: "Seasonal French Cooking", lat: 37.445605, long: -122.160480)
-        addMarker("Scoop Microcreamery", snippet: "Cute counter-serve sweet shop ", lat: 37.446868, long: -122.162683)
-        addMarker("Cheesecake Factory", snippet: "American Dining Chain with jumbo plates", lat: 37.448880, long: -122.160925)
-        addMarker("Tacolicious", snippet: "Creative Mexican taqueria and tequila bar", lat: 37.443617, long: -122.161181)
+        addMarker("Zola", snippet: "Cool, intimate locale with sidewalk seats, featuring area-sourced French cuisine & a vast wine list", lat: 37.445605, long: -122.160480)
+        addMarker("Sancho Taqueria", snippet: "Mexican eatery with folkloric art on the walls & patio seating serving a menu of classic Baja fare", lat: 37.433793, long:  -122.128931)
+        addMarker("Darbar Indian Cuisine", snippet: "A go-to for Stanford students looking to sample a multiregional Indian menu in casual quarters", lat: 37.445035, long: -122.165181)
+        addMarker("Buca di Beppo", snippet: "Chain serving family-style Italian fare in a kitschy setting featuring red-and-white tablecloths", lat:  37.443642, long: -122.160470)
         if self.revealViewController() != nil {
             menuButton.target = self.revealViewController()
             menuButton.action = "revealToggle:"
@@ -103,11 +113,12 @@ class LandingViewController: UIViewController, CLLocationManagerDelegate, GMSMap
     
     func mapView(mapView: GMSMapView!, didTapInfoWindowOfMarker marker: GMSMarker!) {
         print("clicked window")
-        print(self.stepsController.stepViewControllers())
        // self.performSegueWithIdentifier("detailSegue", sender: marker)
         let detailVC = self.stepsController.stepViewControllers()[1] as! DetailViewController
         Util.sharedInstance.restaurantName = marker.title
-        Util.sharedInstance.restaurantHours = hoursDict["Zola"]!
+        Util.sharedInstance.restaurantHours = hoursDict[marker.title]!
+        Util.sharedInstance.restaurantAddr = addrDict[marker.title]!
+        
      //   detailVC.hoursText = marker.snippet
         self.stepsController.showNextStep()
         

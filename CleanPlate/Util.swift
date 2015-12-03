@@ -13,6 +13,7 @@ class Util {
     
     var restaurantName:String  = ""
     var restaurantHours:String = ""
+    var restaurantAddr:String = ""
     var restaurantNames = ["Scoop", "Cheesecake Factory", "Zola", "In-n-Out", "Tacolicious"]
     var rewardDescriptions = ["Free Single Scoop Cone", "Free Dessert with Meal", "50% off wine pairing", "Free fries", "Free taco"]
     var rewardImages = ["scoop","cheesecake-factory-logo","zola-logo","in-n-out-logo", "tacoliciousicon"]
@@ -24,6 +25,14 @@ class Util {
     var redeemedNames = [String]()
     var redeemedDescriptions = [String]()
     var redeemedImages = [String]()
+    
+    func getRestaurantAddr()->String{
+        return restaurantAddr
+    }
+    
+    func setRestaurantAddr(addr:String){
+        restaurantAddr = addr
+    }
     
     func getFavImages()->[String]{
         return favImages
