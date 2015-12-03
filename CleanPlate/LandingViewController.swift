@@ -43,7 +43,7 @@ class LandingViewController: UIViewController, CLLocationManagerDelegate, GMSMap
         self.navigationItem.title = "1. Find a restaurant"
         
         searchBar.delegate = self
-        let camera = GMSCameraPosition.cameraWithLatitude((locationManager.location?.coordinate.latitude)!, longitude: (locationManager.location?.coordinate.longitude)!, zoom: 14)
+        let camera = GMSCameraPosition.cameraWithLatitude((locationManager.location?.coordinate.latitude)!, longitude: (locationManager.location?.coordinate.longitude)!, zoom: 13)
      //   let camera = GMSCameraPosition.cameraWithLatitude(37.445605, longitude: -122.160480, zoom: 15)
         
         mapView.camera = camera

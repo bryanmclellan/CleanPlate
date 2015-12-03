@@ -25,16 +25,16 @@ class SheltersViewController: UIViewController, CLLocationManagerDelegate, GMSMa
         
         self.navigationItem.title = "3. Find a shelter"
         searchBar.delegate = self
-        let camera = GMSCameraPosition.cameraWithLatitude((locationManager.location?.coordinate.latitude)!, longitude: (locationManager.location?.coordinate.longitude)!, zoom: 14)
+        let camera = GMSCameraPosition.cameraWithLatitude((locationManager.location?.coordinate.latitude)!, longitude: (locationManager.location?.coordinate.longitude)!, zoom: 12t)
         
         mapView.camera = camera
         mapView.delegate = self
         mapView.myLocationEnabled = true
         
-        addMarker("Shelter 1", snippet: "Seasonal French Cooking", lat: 37.445605, long: -122.160480)
-        addMarker("Shelter 2", snippet: "Cute counter-serve sweet shop ", lat: 37.446868, long: -122.162683)
-        addMarker("Shelter 3", snippet: "American Dining Chain with jumbo plates", lat: 37.448880, long: -122.160925)
-        addMarker("Shelter 4", snippet: "Creative Mexican taqueria and tequila bar", lat: 37.443617, long: -122.161181)
+        addMarker("Second Harvest Food Bank", snippet: "1051 Bing St, San Carlos, CA 94070", lat: 37.499671, long: -122.244865)
+        addMarker("South Palo Alto Food Closet", snippet: "670 E Meadow Dr, Palo Alto, CA 94306", lat: 37.426510, long: -122.114911)
+        addMarker("St Anthony's Padua Dining Room", snippet: "3500 Middlefield Rd, Menlo Park, CA 94025", lat: 37.472669, long: -122.200920)
+       // addMarker("Shelter 4", snippet: "Creative Mexican taqueria and tequila bar", lat: 37.443617, long: -122.161181)
         
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -47,8 +47,11 @@ class SheltersViewController: UIViewController, CLLocationManagerDelegate, GMSMa
             print("tryna go to google maps with navigation")
             if (UIApplication.sharedApplication().canOpenURL(NSURL(string:"comgooglemaps-x-callback://")!)) {
                 
+                let myAddress = "670 E Meadow Dr, Palo Alto, CA 94306"
+                let myAddr = myAddress.stringByReplacingOccurrencesOfString(" ", withString: "+")
+                print("my addr is \(myAddr)")
                 let directionsRequest = "comgooglemaps-x-callback://" +
-                    "?daddr=John+F.+Kennedy+International+Airport,+Van+Wyck+Expressway,+Jamaica,+New+York" +
+                    "?daddr=" + myAddr +
                 "&x-success=sourceapp://?resume=true&x-source=AirApp"
                 //let directionsURL = NSURL(string: directionsRequest)
                 
@@ -85,7 +88,7 @@ class SheltersViewController: UIViewController, CLLocationManagerDelegate, GMSMa
         
         marker.position = CLLocationCoordinate2DMake(lat, long)
         marker.title = title
-        marker.snippet = snippet + "\n" + "4 bags to pick up"
+       // marker.snippet = snippet + "\n" + "4 bags to pick up"
         marker.appearAnimation = kGMSMarkerAnimationPop
         marker.map = mapView
         markers.append(marker)

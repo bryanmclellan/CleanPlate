@@ -33,7 +33,7 @@ class DetailViewController: UIViewController {
     ]
     
     var websiteDict: [String: String] = [
-        "Zola" : "http://www.zolaprfffaloalto.com",
+        "Zola" : "http://www.zolapaloalto.com",
         "Sancho Taqueria": "http://www.sanchostaqueria.com",
         "Darbar Indian Cuisine" : "http://www.darbarcuisine.com",
         "Buca di Beppo": "http://www.bucadibeppo.com"
@@ -56,9 +56,11 @@ class DetailViewController: UIViewController {
         yesAction = UIAlertAction(title: "Yes", style: UIAlertActionStyle.Default) { (UIAlertAction) -> Void in
             print("tryna go to google maps with navigation")
             if (UIApplication.sharedApplication().canOpenURL(NSURL(string:"comgooglemaps-x-callback://")!)) {
-                
+                let myAddress = Util.sharedInstance.getRestaurantAddr()
+                let myAddr = myAddress.stringByReplacingOccurrencesOfString(" ", withString: "+")
+                print("my addr is \(myAddr)")
                 let directionsRequest = "comgooglemaps-x-callback://" +
-                    "?daddr=John+F.+Kennedy+International+Airport,+Van+Wyck+Expressway,+Jamaica,+New+York" +
+                    "?daddr=" + myAddr +
                 "&x-success=sourceapp://?resume=true&x-source=AirApp"
                 //let directionsURL = NSURL(string: directionsRequest)
                 
