@@ -24,7 +24,19 @@ class MyStepsViewController: RMStepsController {
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
             self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
         }
+        
+        let nav = self.navigationController?.navigationBar
+        nav?.tintColor = UIColor.whiteColor()
+        nav?.barTintColor = UIColor(red: 66/255.0, green: 165/255.0, blue: 245/255.0, alpha: 1.0)
+        let image = UIImage(named: "Icon-72")
+        let imageViewLogo = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+        imageViewLogo.contentMode = .ScaleAspectFit
+        imageViewLogo.image = image
+        
+        self.navigationItem.titleView = imageViewLogo
+
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
