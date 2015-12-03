@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,9 +18,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whiteLogo" translatesAutoresizingMaskIntoConstraints="NO" id="65A-kC-nr6">
-                                <rect key="frame" x="20" y="-399" width="560" height="1398"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon-72" translatesAutoresizingMaskIntoConstraints="NO" id="65A-kC-nr6">
+                                <rect key="frame" x="126.5" y="255" width="347" height="90"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="65A-kC-nr6" secondAttribute="height" multiplier="1795:466" id="H5S-U5-y4e"/>
+                                    <constraint firstAttribute="height" constant="90" id="M1W-jQ-IRa"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <animations/>
@@ -28,8 +33,16 @@
                             <constraint firstItem="65A-kC-nr6" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="43P-k8-Tvw"/>
                             <constraint firstItem="65A-kC-nr6" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="20" id="FN5-2v-QCO"/>
                             <constraint firstAttribute="trailing" secondItem="65A-kC-nr6" secondAttribute="trailing" constant="20" id="NyU-GJ-grq"/>
+                            <constraint firstItem="65A-kC-nr6" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Uhg-7f-OB9"/>
                             <constraint firstItem="65A-kC-nr6" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="W8i-Qs-Eic"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="43P-k8-Tvw"/>
+                                <exclude reference="FN5-2v-QCO"/>
+                                <exclude reference="NyU-GJ-grq"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -38,6 +51,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="whiteLogo" width="5385" height="1398"/>
+        <image name="Icon-72" width="72" height="72"/>
     </resources>
 </document>
