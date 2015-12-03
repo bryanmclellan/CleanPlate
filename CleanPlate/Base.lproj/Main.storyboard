@@ -100,6 +100,9 @@
                                         <rect key="frame" x="85" y="50" width="30" height="30"/>
                                         <animations/>
                                         <state key="normal" title="Call"/>
+                                        <connections>
+                                            <action selector="makeCall:" destination="BhN-b6-PiL" eventType="touchUpInside" id="Qhr-O9-BCi"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="muv-KL-O4g">
                                         <rect key="frame" x="75" y="8" width="50" height="50"/>
@@ -109,6 +112,9 @@
                                             <constraint firstAttribute="width" constant="50" id="an4-dL-X21"/>
                                         </constraints>
                                         <state key="normal" image="ic_call_2x"/>
+                                        <connections>
+                                            <action selector="makeCall:" destination="BhN-b6-PiL" eventType="touchUpInside" id="xUv-e0-0vw"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <animations/>
@@ -127,11 +133,28 @@
                                         <rect key="frame" x="44" y="50" width="112" height="30"/>
                                         <animations/>
                                         <state key="normal" title="Add to Favorites"/>
+                                        <connections>
+                                            <action selector="addToFavs:" destination="BhN-b6-PiL" eventType="touchUpInside" id="gqJ-2e-rNR"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4PM-vw-339">
+                                        <rect key="frame" x="75" y="8" width="50" height="50"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="5Aq-OB-dRu"/>
+                                            <constraint firstAttribute="width" constant="50" id="ofu-LU-Adg"/>
+                                        </constraints>
+                                        <state key="normal" image="ic_favorite_3x"/>
+                                        <connections>
+                                            <action selector="addToFavs:" destination="BhN-b6-PiL" eventType="touchUpInside" id="avw-y8-xkv"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <animations/>
                                 <constraints>
+                                    <constraint firstItem="4PM-vw-339" firstAttribute="top" secondItem="zei-dI-eRV" secondAttribute="top" constant="8" id="Gvh-Hj-fiH"/>
                                     <constraint firstItem="Zyh-Sm-zon" firstAttribute="centerX" secondItem="zei-dI-eRV" secondAttribute="centerX" id="HSV-dB-oWW"/>
+                                    <constraint firstItem="4PM-vw-339" firstAttribute="centerX" secondItem="zei-dI-eRV" secondAttribute="centerX" id="ZnX-YM-7p9"/>
                                     <constraint firstAttribute="bottom" secondItem="Zyh-Sm-zon" secondAttribute="bottom" id="f2g-q7-XEh"/>
                                 </constraints>
                             </view>
@@ -237,6 +260,9 @@
                                             <constraint firstAttribute="width" constant="50" id="wsX-S8-t2u"/>
                                         </constraints>
                                         <state key="normal" image="ic_public_2x"/>
+                                        <connections>
+                                            <action selector="openWebsite:" destination="BhN-b6-PiL" eventType="touchUpInside" id="DfE-mO-mBD"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <animations/>
@@ -1110,6 +1136,7 @@
         <image name="ic_call_2x" width="48" height="48"/>
         <image name="ic_check_circle_3x" width="72" height="72"/>
         <image name="ic_directions_car_2x" width="48" height="48"/>
+        <image name="ic_favorite_3x" width="72" height="72"/>
         <image name="ic_highlight_off_3x" width="72" height="72"/>
         <image name="ic_list_2x" width="48" height="48"/>
         <image name="ic_public_2x" width="48" height="48"/>
@@ -1117,6 +1144,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="IKc-dq-6Nh"/>
-        <segue reference="DLX-IY-yK9"/>
+        <segue reference="Dk4-sq-qp8"/>
     </inferredMetricsTieBreakers>
 </document>

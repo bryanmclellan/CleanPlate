@@ -83,7 +83,7 @@ class LandingViewController: UIViewController, CLLocationManagerDelegate, GMSMap
         
         marker.position = CLLocationCoordinate2DMake(lat, long)
         marker.title = title
-        marker.snippet = snippet + "\n" + "4 bags to pick up"
+        marker.snippet = snippet + "\n" + "3 bags to pick up"
         marker.appearAnimation = kGMSMarkerAnimationPop
         marker.map = mapView
         markers.append(marker)

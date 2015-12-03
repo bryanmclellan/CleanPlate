@@ -138,8 +138,9 @@ class SheltersViewController: UIViewController, CLLocationManagerDelegate, GMSMa
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: nil)
         
-        alert.addAction(confirmAction)
+        
         alert.addAction(cancelAction)
+        alert.addAction(confirmAction)
         
         self.presentViewController(alert, animated: true, completion: nil)
     

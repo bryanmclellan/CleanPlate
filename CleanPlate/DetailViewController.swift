@@ -32,6 +32,20 @@ class DetailViewController: UIViewController {
         "Buca di Beppo": "buca-wide"
     ]
     
+    var websiteDict: [String: String] = [
+        "Zola" : "http://www.zolaprfffaloalto.com",
+        "Sancho Taqueria": "http://www.sanchostaqueria.com",
+        "Darbar Indian Cuisine" : "http://www.darbarcuisine.com",
+        "Buca di Beppo": "http://www.bucadibeppo.com"
+    ]
+    
+    var phoneDict: [String: String] = [
+        "Zola" : "tel://6505210651",
+        "Sancho Taqueria": "tel://6503248226",
+        "Darbar Indian Cuisine" : "tel://6503216688",
+        "Buca di Beppo": "tel://6503290665"
+    ]
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -53,7 +67,7 @@ class DetailViewController: UIViewController {
                 print("Can't use comgooglemaps://");
             }
             let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-            hud.labelText = "Waiting for restaurant to confirm pick up"
+            hud.labelText = "\(Util.sharedInstance.getRestaurantName()) is confirming pickup"
             let tap = UITapGestureRecognizer(target: self, action: "onHudTap")
             hud.addGestureRecognizer(tap)
         }
@@ -61,12 +75,20 @@ class DetailViewController: UIViewController {
         noAction = UIAlertAction(title: "No", style: UIAlertActionStyle.Default) { (UIAlertAction) -> Void in
             print("No directions requested")
             let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-            hud.labelText = "Waiting for restaurant to confirm pick up"
+            hud.labelText = "\(Util.sharedInstance.getRestaurantName()) is confirming pickup"
             let tap = UITapGestureRecognizer(target: self, action: "onHudTap")
             hud.addGestureRecognizer(tap)
         }
         
     }
+    
+    @IBAction func openWebsite(sender: AnyObject) {
+        UIApplication.sharedApplication().openURL(NSURL(string: websiteDict[Util.sharedInstance.restaurantName]!)!)
+    }
+    @IBAction func makeCall(sender: AnyObject) {        
+        UIApplication.sharedApplication().openURL(NSURL(string: phoneDict[Util.sharedInstance.restaurantName]!)!)
+    }
+    
     
     override func viewWillAppear(animated: Bool) {
         restaurantNameLabel.text = Util.sharedInstance.restaurantName
@@ -100,13 +122,15 @@ class DetailViewController: UIViewController {
             alert.addAction(self.noAction)
             alert.addAction(self.yesAction)
             
+            
             self.presentViewController(alert, animated: true, completion: nil)
         }
         
         let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: nil)
         
-        pickUpAlert.addAction(confirmAction)
+        
         pickUpAlert.addAction(cancelAction)
+        pickUpAlert.addAction(confirmAction)
         
         self.presentViewController(pickUpAlert, animated: true, completion: nil)
     }
@@ -120,6 +144,28 @@ class DetailViewController: UIViewController {
     @IBAction func dismissHUD(sender: AnyObject) {
         MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
     }
+    
+    
+    @IBAction func addToFavs(sender: AnyObject) {
+        var alert = UIAlertController(title: "Added to Favorites", message: "You will now recieve notifications when \(Util.sharedInstance.getRestaurantName()) has leftover food", preferredStyle: .Alert)
+        
+        let doneAction = UIAlertAction(title: "OK", style: .Default) { (UIAlertAction) -> Void in
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
+        
+        alert.addAction(doneAction)
+        
+        self.presentViewController(alert, animated: true, completion: nil)
+        
+        var favs = Util.sharedInstance.getFavRestaurantNames()
+        favs.append(Util.sharedInstance.getRestaurantName())
+        Util.sharedInstance.setFavRestaurantNames(favs)
+        
+        var images = Util.sharedInstance.getFavImages()
+        images.append(imagesDict[Util.sharedInstance.getRestaurantName()]!)
+        Util.sharedInstance.setFavImages(images)
+    }
+    
     /*
     // MARK: - Navigation
 

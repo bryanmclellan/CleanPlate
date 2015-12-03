@@ -55,6 +55,10 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
         view.backgroundColor = UIColor.lightGrayColor().colorWithAlphaComponent(0.3)
         return view
     }
+    
+//    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        return "Notifications"
+//    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
