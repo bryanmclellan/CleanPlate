@@ -10,6 +10,11 @@ import UIKit
 import GoogleMaps
 
 class LandingViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate, UISearchBarDelegate {
+    
+    var hoursDict: [String:String] = [
+        "Zola" : "Friday 5:00 – 10:00 PM"
+        
+    ]
 
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
@@ -102,8 +107,8 @@ class LandingViewController: UIViewController, CLLocationManagerDelegate, GMSMap
        // self.performSegueWithIdentifier("detailSegue", sender: marker)
         let detailVC = self.stepsController.stepViewControllers()[1] as! DetailViewController
         Util.sharedInstance.restaurantName = marker.title
+        Util.sharedInstance.restaurantHours = hoursDict["Zola"]!
      //   detailVC.hoursText = marker.snippet
-        print("makrer title is \(marker.title)")
         self.stepsController.showNextStep()
         
     }

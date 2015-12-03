@@ -19,9 +19,9 @@ class RewardsViewController: UIViewController, UITableViewDataSource, UITableVie
     
     @IBOutlet weak var QRLabel: UILabel!
     @IBOutlet weak var activeTableView: UITableView!
-    var restaurantNames = ["Scoop", "Cheesecake Factory", "Zola", "In-n-Out", "Tacolicious"]
-    var rewardDescriptions = ["Free Single Scoop Cone", "Free Dessert with Meal", "50% off wine pairing", "Free fries", "Free taco"]
-    var rewardImages = ["scoop","cheesecake-factory-logo","zola-logo","in-n-out-logo", "tacoliciousicon"]
+    var restaurantNames = [String]()
+    var rewardDescriptions = [String]()
+    var rewardImages = [String]()
     
     var redeemedNames = [String]()
     var redeemedDescriptions = [String]()
@@ -35,10 +35,19 @@ class RewardsViewController: UIViewController, UITableViewDataSource, UITableVie
         super.viewDidLoad()
         self.revealViewController().delegate = self
         
-        if !cameFromShelter {
-            print("moving up")
-            self.activeTableView.frame = CGRect(x: self.activeTableView.frame.origin.x, y: self.activeTableView.frame.origin.y-44, width: self.activeTableView.frame.width, height: self.activeTableView.frame.height)
-        }
+        restaurantNames = Util.sharedInstance.getRewardActiveRestaurantNames()
+        rewardDescriptions = Util.sharedInstance.getRewardActiveDescriptions()
+        rewardImages = Util.sharedInstance.getRewardActiveImages()
+        
+        redeemedNames = Util.sharedInstance.getRedeemedNames()
+        redeemedDescriptions = Util.sharedInstance.getRedeemedDescriptions()
+        redeemedImages = Util.sharedInstance.getRedeemedImages()
+        
+        
+//        if !cameFromShelter {
+//            print("moving up")
+//            self.activeTableView.frame = CGRect(x: self.activeTableView.frame.origin.x, y: self.activeTableView.frame.origin.y-44, width: self.activeTableView.frame.width, height: self.activeTableView.frame.height)
+//        }
         
         if self.revealViewController() != nil {
             menuButton.target = self.revealViewController()
@@ -180,8 +189,6 @@ class RewardsViewController: UIViewController, UITableViewDataSource, UITableVie
                 self.view.bringSubviewToFront(self.QRView)
             })
             self.removeActiveAddToRedeemed(indexPath.row)
-            self.activeTableView.reloadData()
-            self.redeemedTableView.reloadData()
         }
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .Default) { (UIAlertAction) -> Void in
@@ -199,10 +206,21 @@ class RewardsViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func removeActiveAddToRedeemed(index: Int) {
+        
         redeemedNames.append(restaurantNames.removeAtIndex(index))
+        Util.sharedInstance.setRewardActiveRestaurantNames(restaurantNames)
+        Util.sharedInstance.setRedeemedNames(redeemedNames)
+        
         redeemedDescriptions.append(rewardDescriptions.removeAtIndex(index))
+        Util.sharedInstance.setRewardActiveDescriptions(rewardDescriptions)
+        Util.sharedInstance.setRedeemedDescriptions(redeemedDescriptions)
+        
         redeemedImages.append( rewardImages.removeAtIndex(index))
-
+        Util.sharedInstance.setRewardActiveImages(rewardImages)
+        Util.sharedInstance.setRedeemedImages(redeemedImages)
+        self.activeTableView.reloadData()
+        self.redeemedTableView.reloadData()
+        
     }
     
     func revealController(revealController: SWRevealViewController!, willMoveToPosition position: FrontViewPosition) {

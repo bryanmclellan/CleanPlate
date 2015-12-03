@@ -30,7 +30,7 @@ class DetailViewController: UIViewController {
         self.navigationItem.title = "2. Confirm Pickup"
         
         restaurantNameLabel.text = Util.sharedInstance.restaurantName
-        hoursLabel.text = "8:00 am - 10:00 pm"
+        hoursLabel.text = Util.sharedInstance.getRestaurantHours()
         
         // Do any additional setup after loading the view.
         

@@ -40,6 +40,18 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
         nav?.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
         menuButton.image = UIImage(named: "ic_list_2x")
     }
+    
+    
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.mainScreen().bounds.width, height: 30))
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: UIScreen.mainScreen().bounds.width, height: 30))
+        label.textAlignment = .Right
+        label.text = "Notifications"
+        label.textColor = UIColor.grayColor()
+        view.addSubview(label)
+        view.backgroundColor = UIColor.lightGrayColor().colorWithAlphaComponent(0.3)
+        return view
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
