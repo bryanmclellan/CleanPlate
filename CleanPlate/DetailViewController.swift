@@ -11,7 +11,6 @@ import UIKit
 class DetailViewController: UIViewController {
 
     @IBOutlet weak var restaurantNameLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var hoursLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var numberOfBagsLabel: UILabel!
@@ -29,8 +28,8 @@ class DetailViewController: UIViewController {
         
         self.navigationItem.title = "2. Confirm Pickup"
         
-        restaurantNameLabel.text = restaurantNameText
-        descriptionLabel.text = descriptionText
+        restaurantNameLabel.text = Util.sharedInstance.restaurantName
+       // hoursLabel.text = hoursText
 
         // Do any additional setup after loading the view.
         

@@ -28,8 +28,8 @@ class LandingViewController: UIViewController, CLLocationManagerDelegate, GMSMap
         self.navigationItem.title = "1. Find a restaurant"
         
         searchBar.delegate = self
-     //   let camera = GMSCameraPosition.cameraWithLatitude((locationManager.location?.coordinate.latitude)!, longitude: (locationManager.location?.coordinate.longitude)!, zoom: 14)
-        let camera = GMSCameraPosition.cameraWithLatitude(37.445605, longitude: -122.160480, zoom: 15)
+        let camera = GMSCameraPosition.cameraWithLatitude((locationManager.location?.coordinate.latitude)!, longitude: (locationManager.location?.coordinate.longitude)!, zoom: 14)
+     //   let camera = GMSCameraPosition.cameraWithLatitude(37.445605, longitude: -122.160480, zoom: 15)
         
         mapView.camera = camera
         mapView.delegate = self
@@ -97,9 +97,13 @@ class LandingViewController: UIViewController, CLLocationManagerDelegate, GMSMap
     }
     
     func mapView(mapView: GMSMapView!, didTapInfoWindowOfMarker marker: GMSMarker!) {
-        print("here!!")
+        print("clicked window")
+        print(self.stepsController.stepViewControllers())
        // self.performSegueWithIdentifier("detailSegue", sender: marker)
-        print(" here we go \(self.stepsController)")
+        let detailVC = self.stepsController.stepViewControllers()[1] as! DetailViewController
+        Util.sharedInstance.restaurantName = marker.title
+     //   detailVC.hoursText = marker.snippet
+        print("makrer title is \(marker.title)")
         self.stepsController.showNextStep()
         
     }
@@ -135,13 +139,6 @@ class LandingViewController: UIViewController, CLLocationManagerDelegate, GMSMap
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        if segue.identifier == "detailSegue" {
-            let detailVC = segue.destinationViewController as! DetailViewController
-            let marker = sender as! GMSMarker
-            
-            detailVC.restaurantNameText = marker.title
-            detailVC.descriptionText = marker.snippet
-        }
         
     }
     
