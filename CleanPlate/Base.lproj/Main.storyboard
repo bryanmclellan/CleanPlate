@@ -655,14 +655,18 @@
                     </view>
                     <navigationItem key="navigationItem" id="vLx-52-MBQ">
                         <barButtonItem key="leftBarButtonItem" image="ic_list_2x" id="TXh-Sx-0h2"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="bDk-FZ-GTu">
+                            <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="barItem" destination="bDk-FZ-GTu" id="801-mc-jdm"/>
                         <outlet property="menuButton" destination="TXh-Sx-0h2" id="DzF-GQ-PX6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lnq-sg-U2e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2511" y="461"/>
+            <point key="canvasLocation" x="2551" y="489"/>
         </scene>
         <!--Reveal View Controller-->
         <scene sceneID="3bl-tP-Tku">

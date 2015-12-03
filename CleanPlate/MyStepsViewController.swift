@@ -10,6 +10,7 @@ import UIKit
 
 class MyStepsViewController: RMStepsController {
 
+    @IBOutlet weak var barItem: UIBarButtonItem!
     @IBOutlet weak var menuButton: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,10 +29,12 @@ class MyStepsViewController: RMStepsController {
         let nav = self.navigationController?.navigationBar
         nav?.tintColor = UIColor.whiteColor()
         nav?.barTintColor = UIColor(red: 66/255.0, green: 165/255.0, blue: 245/255.0, alpha: 1.0)
-        let image = UIImage(named: "Icon-72")
-        let imageViewLogo = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+        let image = UIImage(named: "whiteLogo")
+        let imageViewLogo = UIImageView(frame: CGRect(x: -100, y: 0, width: 100, height: 40))
         imageViewLogo.contentMode = .ScaleAspectFit
         imageViewLogo.image = image
+        
+        barItem.tintColor = UIColor(red: 66/255.0, green: 165/255.0, blue: 245/255.0, alpha: 0.0)
         
         self.navigationItem.titleView = imageViewLogo
 
