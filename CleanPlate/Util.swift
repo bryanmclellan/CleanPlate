@@ -17,10 +17,29 @@ class Util {
     var rewardDescriptions = ["Free Single Scoop Cone", "Free Dessert with Meal", "50% off wine pairing", "Free fries", "Free taco"]
     var rewardImages = ["scoop","cheesecake-factory-logo","zola-logo","in-n-out-logo", "tacoliciousicon"]
     
+    var favImages = ["scoop","cheesecake-factory-logo","zola-logo","in-n-out-logo", "tacoliciousicon"]
+    
+    var favRestaurantNames = ["Scoop", "Cheesecake Factory", "Zola", "In-n-Out", "Tacolicious"]
+    
     var redeemedNames = [String]()
     var redeemedDescriptions = [String]()
     var redeemedImages = [String]()
     
+    func getFavImages()->[String]{
+        return favImages
+    }
+    
+    func getFavRestaurantNames() -> [String]{
+        return favRestaurantNames
+    }
+    
+    func setFavRestaurantNames(names:[String]){
+        favRestaurantNames = names
+    }
+    
+    func setFavImages(images: [String]){
+        favImages = images
+    }
     func getRestaurantHours() -> String{
         return restaurantHours
     }

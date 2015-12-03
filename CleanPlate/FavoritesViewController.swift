@@ -13,13 +13,16 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
-    var rewardImages = ["scoop","cheesecake-factory-logo","zola-logo","in-n-out-logo", "tacoliciousicon"]
+    var rewardImages = [String]()
     
-    var restaurantNames = ["Scoop", "Cheesecake \n Factory", "Zola", "In-n-Out", "Tacolicious"]
+    var restaurantNames = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        rewardImages = Util.sharedInstance.getFavImages()
+        restaurantNames = Util.sharedInstance.getFavRestaurantNames()
+        
         // Do any additional setup after loading the view.
         
         if self.revealViewController() != nil {
