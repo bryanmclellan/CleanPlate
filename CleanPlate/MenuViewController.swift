@@ -12,8 +12,8 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     @IBOutlet weak var tableView: UITableView!
     
-    var CellLabels = ["Home", "Recent", "Rewards", "Plates Served", "Settings", "Logout"]
-    var CellImages = ["ic_home_3x", "ic_update_3x", "ic_card_giftcard_3x", "ic_local_dining_3x"]
+    var CellLabels = ["Home", "Recent", "Rewards", "Plates Served", "Favorites", "Logout"]
+    var CellImages = ["ic_home_3x", "ic_update_3x", "ic_card_giftcard_3x", "ic_local_dining_3x", "ic_favorite_3x"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +40,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if(indexPath.row == 2 || indexPath.row == 0 || indexPath.row == 1){
+        if(indexPath.row == 2 || indexPath.row == 0 || indexPath.row == 1 || indexPath.row == 4){
             self.performSegueWithIdentifier(CellLabels[indexPath.row] + "Segue", sender: self)
         }
     }
