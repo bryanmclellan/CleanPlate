@@ -67,9 +67,7 @@ class LandingViewController: UIViewController, CLLocationManagerDelegate, GMSMap
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         
-        
-        // Do any additional setup after loading the view.
-    }
+        }
     
     
     
@@ -98,10 +96,8 @@ class LandingViewController: UIViewController, CLLocationManagerDelegate, GMSMap
             if !lowerTitle.containsString(lowerSearch) && searchText != ""{
                 m.map = nil
             }
-            else{
-                if(m.map == nil){
-                    m.map = mapView
-                }
+            else if(m.map == nil){
+                m.map = mapView
             }
         }
     }
@@ -112,25 +108,19 @@ class LandingViewController: UIViewController, CLLocationManagerDelegate, GMSMap
     }
     
     func mapView(mapView: GMSMapView!, didTapInfoWindowOfMarker marker: GMSMarker!) {
-        print("clicked window")
-       // self.performSegueWithIdentifier("detailSegue", sender: marker)
+
         let detailVC = self.stepsController.stepViewControllers()[1] as! DetailViewController
         Util.sharedInstance.restaurantName = marker.title
         Util.sharedInstance.restaurantHours = hoursDict[marker.title]!
         Util.sharedInstance.restaurantAddr = addrDict[marker.title]!
         
-     //   detailVC.hoursText = marker.snippet
         self.stepsController.showNextStep()
         
     }
     
-//    func mapView(mapView: GMSMapView!, markerInfoWindow marker: GMSMarker!) -> UIView! {
-//        let image  = UIImage(named: "AppIcon")
-//        return UIImageView(image: image)
-//    }
     
     func searchBarTextDidEndEditing(searchBar: UISearchBar) {
-            }
+    }
     
 
     func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
@@ -138,7 +128,6 @@ class LandingViewController: UIViewController, CLLocationManagerDelegate, GMSMap
     }
     
     func mapView(mapView: GMSMapView!, didTapAtCoordinate coordinate: CLLocationCoordinate2D) {
-        print("You tapped at \(coordinate.latitude), \(coordinate.longitude)")
         searchBar.endEditing(true)
     }
 
