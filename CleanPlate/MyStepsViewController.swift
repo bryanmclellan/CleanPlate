@@ -34,10 +34,27 @@ class MyStepsViewController: RMStepsController {
         imageViewLogo.contentMode = .ScaleAspectFit
         imageViewLogo.image = image
         
-        barItem.tintColor = UIColor(red: 66/255.0, green: 165/255.0, blue: 245/255.0, alpha: 0.0)
+        barItem.tintColor = UIColor.whiteColor()
         
         self.navigationItem.titleView = imageViewLogo
 
+    }
+    
+    
+    @IBAction func cancelPressed(sender: AnyObject) {
+        let alert = UIAlertController(title: "Problem?", message: "To cancel a delivery or for other problems call the restaurant", preferredStyle: .Alert)
+        
+        let callAction = UIAlertAction(title: "Call", style: .Default) { (UIAlertAction) -> Void in
+            UIApplication.sharedApplication().openURL(NSURL(string: "tel://3026908366")!)
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Default) { (UIAlertAction) -> Void in
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
+        
+        alert.addAction(cancelAction)
+        alert.addAction(callAction)
+        
+        self.presentViewController(alert, animated: true, completion: nil)
     }
     
 

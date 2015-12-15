@@ -25,7 +25,8 @@ class SheltersViewController: UIViewController, CLLocationManagerDelegate, GMSMa
         
         self.navigationItem.title = "3. Find a shelter"
         searchBar.delegate = self
-        let camera = GMSCameraPosition.cameraWithLatitude((locationManager.location?.coordinate.latitude)!, longitude: (locationManager.location?.coordinate.longitude)!, zoom: 12t)
+      //  let camera = GMSCameraPosition.cameraWithLatitude((locationManager.location?.coordinate.latitude)!, longitude: (locationManager.location?.coordinate.longitude)!, zoom: 12)
+        let camera = GMSCameraPosition.cameraWithLatitude(37.426464, longitude: -122.171904, zoom: 12)
         
         mapView.camera = camera
         mapView.delegate = self
@@ -112,7 +113,7 @@ class SheltersViewController: UIViewController, CLLocationManagerDelegate, GMSMa
     func onHudTap(){
         MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
        // self.performSegueWithIdentifier("shelterSegue", sender: self)
-        let alert = UIAlertController(title: "Claim Reward", message: "You have got a new reward. Check it out!", preferredStyle: UIAlertControllerStyle.Alert)
+        let alert = UIAlertController(title: "Claim Reward", message: "You have a new reward. Check it out!", preferredStyle: UIAlertControllerStyle.Alert)
         let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default) { (UIAlertAction) -> Void in
             self.performSegueWithIdentifier("rewardSegue", sender: self)
           //  self.stepsController.showNextStep()
@@ -132,7 +133,7 @@ class SheltersViewController: UIViewController, CLLocationManagerDelegate, GMSMa
         let alert = UIAlertController(title: "Confirm delivery?", message: "Click ok to confirm that you will deliver to this shelter", preferredStyle: UIAlertControllerStyle.Alert)
         let confirmAction = UIAlertAction(title: "Confirm", style: UIAlertActionStyle.Default) { (UIAlertAction) -> Void in
 
-            let directionsAlert = UIAlertController(title: "Get directions?", message: "Would you like directions to the restaurant?", preferredStyle: UIAlertControllerStyle.Alert)
+            let directionsAlert = UIAlertController(title: "Get directions?", message: "Would you like directions to the shelter?", preferredStyle: UIAlertControllerStyle.Alert)
             
             directionsAlert.addAction(self.noAction)
             directionsAlert.addAction(self.yesAction)
