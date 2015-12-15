@@ -44,6 +44,7 @@ class DetailViewController: UIViewController {
         "Sancho Taqueria": "tel://6503248226",
         "Darbar Indian Cuisine" : "tel://6503216688",
         "Buca di Beppo": "tel://6503290665"
+    
     ]
 
     override func viewDidLoad() {
